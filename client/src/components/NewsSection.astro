@@ -1,0 +1,36 @@
+---
+import type { NewsCard } from '../lib/content-loader';
+
+interface Props {
+  news: NewsCard[];
+}
+
+const { news } = Astro.props;
+---
+
+<section class="py-20 bg-[#F8FAFC]">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-[#1E3A8A]">Berita Terbaru</h2>
+    </div>
+
+    <!-- News Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {news.map((card) => (
+        <div class="bg-white rounded-xl shadow-md border border-slate-200 p-6 flex flex-col">
+          <p class="text-slate-500 text-sm mb-2">{card.date}</p>
+          <h3 class="font-semibold text-[#0F172A] flex-1 mb-4">{card.title}</h3>
+          <a
+            href={card.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block mt-auto px-4 py-2 bg-[#F59E0B] text-white text-sm font-medium rounded-lg hover:bg-amber-500 transition-colors w-fit"
+          >
+            Baca Selengkapnya
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

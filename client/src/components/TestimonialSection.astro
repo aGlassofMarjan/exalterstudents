@@ -1,0 +1,52 @@
+---
+import type { TestimonialCard } from '../lib/content-loader';
+
+interface Props {
+  testimonials: TestimonialCard[];
+}
+
+const { testimonials } = Astro.props;
+
+const portraits: Record<string, string> = {
+  'Rina Sari': '/images/testimony-rina-sari.png',
+  'Andi Wijaya': '/images/testimony-andi-wijaya.png',
+  'Lilis Kusuma': '/images/testimony-lilis-kusuma.png',
+};
+---
+
+<section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-[#1E3A8A]">Apa Kata Mereka</h2>
+    </div>
+
+    <!-- Testimonial Cards -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      {testimonials.map((card) => (
+        <div class="bg-white rounded-xl shadow-md border border-slate-200 p-6 flex flex-col">
+          <!-- Quote icon -->
+          <span class="text-5xl leading-none text-[#3B82F6] font-serif mb-4" aria-hidden="true">&ldquo;</span>
+          <!-- Quote text -->
+          <p class="italic text-slate-700 flex-1 mb-6">{card.quote}</p>
+          <!-- Author -->
+          <div class="flex items-center gap-3">
+            {portraits[card.name] && (
+              <img
+                src={portraits[card.name]}
+                alt={card.name}
+                width="44"
+                height="44"
+                class="rounded-full object-cover w-11 h-11 border-2 border-slate-200"
+              />
+            )}
+            <div>
+              <h3 class="font-bold text-[#0F172A]">{card.name}</h3>
+              <p class="text-slate-500 text-sm">{card.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

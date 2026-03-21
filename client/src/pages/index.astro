@@ -1,17 +1,78 @@
 ---
-
+import content from '../lib/content-loader';
+import Navigation from '../components/Navigation';
+import HeroSection from '../components/HeroSection.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ServiceBriefSection from '../components/ServiceBriefSection.astro';
+import MetricsSection from '../components/MetricsSection.astro';
+import MarqueeSection from '../components/MarqueeSection';
+import TestimonialSection from '../components/TestimonialSection.astro';
+import Footer from '../components/Footer.astro';
+import ScrollToTop from '../components/ScrollToTop';
+import '../styles/global.css';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>Exalter Students — Platform Inovasi & Pendidikan Pemuda Indonesia</title>
+    <meta name="description" content="Exalter Students memberdayakan siswa Indonesia dalam akademik, karier, kepemimpinan, dan pertumbuhan pribadi melalui inkubasi, mentorship, kompetisi, dan konferensi." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.exalterstudents.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.exalterstudents.com/" />
+    <meta property="og:title" content="Exalter Students — Platform Inovasi & Pendidikan Pemuda Indonesia" />
+    <meta property="og:description" content="Exalter Students memberdayakan siswa Indonesia dalam akademik, karier, kepemimpinan, dan pertumbuhan pribadi melalui inkubasi, mentorship, kompetisi, dan konferensi." />
+    <meta property="og:image" content="https://www.exalterstudents.com/images/logo.jpeg" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="Exalter Students" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Exalter Students — Platform Inovasi & Pendidikan Pemuda Indonesia" />
+    <meta name="twitter:description" content="Exalter Students memberdayakan siswa Indonesia dalam akademik, karier, kepemimpinan, dan pertumbuhan pribadi." />
+    <meta name="twitter:image" content="https://www.exalterstudents.com/images/logo.jpeg" />
+
+    <!-- JSON-LD Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Exalter Students",
+      "url": "https://www.exalterstudents.com",
+      "logo": "https://www.exalterstudents.com/images/logo.jpeg",
+      "description": "Platform inovasi dan pendidikan pemuda Indonesia — memberdayakan siswa dalam akademik, karier, kepemimpinan, dan pertumbuhan pribadi.",
+      "sameAs": [
+        "https://instagram.com/exalterstudents",
+        "https://linkedin.com/company/exalter-students"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@exalterstudents.com",
+        "contactType": "customer support"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <Navigation client:load currentPath="/" />
+    <main>
+      <HeroSection title={content.hero.title} subtitle={content.hero.subtitle} />
+      <AboutSection about={content.about} />
+      <ServiceBriefSection title={content.serviceBrief.title} cards={content.serviceBrief.cards} />
+      <MetricsSection metrics={content.metrics} />
+      <MarqueeSection client:load title={content.marquee.title} description={content.marquee.description} />
+      <TestimonialSection testimonials={content.testimonials} />
+    </main>
+    <Footer />
+    <ScrollToTop client:load />
+  </body>
 </html>

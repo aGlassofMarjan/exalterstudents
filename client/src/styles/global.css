@@ -6,6 +6,13 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+    /* Brand color palette */
+    --color-primary: #1E3A8A;
+    --color-accent-blue: #3B82F6;
+    --color-text: #0F172A;
+    --color-background: #F8FAFC;
+    --color-cta: #F59E0B;
+
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
@@ -126,4 +133,15 @@
   html {
     @apply font-sans;
     }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 30s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
 }

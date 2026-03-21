@@ -1,0 +1,72 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+}
+
+const { title, subtitle } = Astro.props;
+
+const bgImages = [
+  { src: '/images/hero-2-image-505x445.png', alt: 'Exalter Students platform' },
+  { src: '/images/achievement-400x524.png', alt: 'Exalter Students achievement' },
+  { src: '/images/event-1-295x319.png', alt: 'Exalter Students event' },
+  { src: '/images/achievement-2-400x581.png', alt: 'Exalter Students achievement 2' },
+  { src: '/images/hero-1-image-820x283.png', alt: 'Exalter Students community' },
+  { src: '/images/achievement-3-2560x2050.png', alt: 'Exalter Students achievement 3' },
+  { src: '/images/achievement-4-1920x1024.jpg', alt: 'Exalter Students achievement 4' },
+];
+
+// duplicate for seamless loop
+const doubled = [...bgImages, ...bgImages];
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden" style="background: #0F172A;">
+
+  <!-- Scrolling background image marquee -->
+  <div class="absolute inset-0 flex items-center overflow-hidden" aria-hidden="true">
+    <div class="hero-bg-track flex gap-6 items-center">
+      {doubled.map((img, i) => (
+        <img
+          src={img.src}
+          alt={img.alt}
+          class="h-[70vh] w-auto object-cover rounded-xl flex-shrink-0 opacity-30"
+        />
+      ))}
+    </div>
+  </div>
+
+  <!-- Dark overlay for readability -->
+  <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(15,23,42,0.55) 0%, rgba(15,23,42,0.7) 100%);" aria-hidden="true"></div>
+
+  <!-- Foreground text -->
+  <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+      {title}
+    </h1>
+    <p class="mt-6 text-lg md:text-xl text-slate-300 leading-relaxed">
+      {subtitle}
+    </p>
+    <a
+      href="/program"
+      class="mt-10 inline-block px-10 py-4 rounded-lg font-semibold text-white transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-400"
+      style="background: #F59E0B;"
+    >
+      Mulai Sekarang
+    </a>
+  </div>
+
+</section>
+
+<style>
+  @keyframes hero-bg-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .hero-bg-track {
+    animation: hero-bg-scroll 60s linear infinite;
+    will-change: transform;
+  }
+  .hero-bg-track:hover {
+    animation-play-state: paused;
+  }
+</style>

@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetClose } from '@/components/ui/sheet'
 import ThemeToggle from './ThemeToggle'
 
 interface NavigationProps {
@@ -17,8 +17,6 @@ const WaIcon = () => (
 )
 
 export default function Navigation({ currentPath }: NavigationProps) {
-  const [isOpen, setIsOpen] = useState(false)
-
   const links = [
     { href: '/', label: 'Beranda' },
     { href: '/program', label: 'Program' },
@@ -57,7 +55,7 @@ export default function Navigation({ currentPath }: NavigationProps) {
             ))}
           </div>
 
-          {/* Right — ThemeToggle + WhatsApp CTA + hamburger */}
+          {/* Right — ThemeToggle + WhatsApp CTA + mobile Sheet trigger */}
           <div className="flex items-center gap-2">
             <ThemeToggle className="hidden sm:inline-flex" />
 
@@ -76,67 +74,67 @@ export default function Navigation({ currentPath }: NavigationProps) {
               </a>
             </Button>
 
-            <Button
-              variant="ghost"
-              size="icon"
-              className="flex md:hidden rounded-full text-foreground"
-              aria-label="Toggle menu"
-              aria-expanded={isOpen}
-              onClick={() => setIsOpen((prev) => !prev)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault()
-                  setIsOpen((prev) => !prev)
-                }
-              }}
-            >
-              {isOpen ? (
-                <X className="h-5 w-5" aria-hidden="true" />
-              ) : (
-                <Menu className="h-5 w-5" aria-hidden="true" />
-              )}
-            </Button>
+            {/* Mobile menu — Sheet */}
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="flex md:hidden rounded-full text-foreground"
+                  aria-label="Open menu"
+                >
+                  <Menu className="h-5 w-5" aria-hidden="true" />
+                </Button>
+              </SheetTrigger>
+
+              <SheetContent side="right" className="w-72">
+                <SheetHeader>
+                  <SheetTitle>
+                    <a href="/" className="flex items-center gap-2">
+                      <img src="/images/logo.jpeg" alt="Exalter Students" width="28" height="28" className="rounded-full object-cover" />
+                      <span className="text-lg font-bold text-primary">Exalter Students</span>
+                    </a>
+                  </SheetTitle>
+                </SheetHeader>
+
+                <div className="flex flex-col gap-1 px-4">
+                  {links.map((link) => (
+                    <SheetClose key={link.href} asChild>
+                      <a
+                        href={link.href}
+                        className={`rounded-full px-4 py-2 text-sm transition-all ${
+                          isActive(link.href)
+                            ? 'bg-primary text-primary-foreground font-semibold'
+                            : 'text-foreground font-medium hover:bg-muted'
+                        }`}
+                      >
+                        {link.label}
+                      </a>
+                    </SheetClose>
+                  ))}
+                </div>
+
+                <div className="flex items-center gap-2 px-4 mt-4">
+                  <ThemeToggle />
+                  <Button
+                    asChild
+                    className="inline-flex items-center gap-2 rounded-full bg-whatsapp text-whatsapp-foreground hover:bg-whatsapp/90 w-fit"
+                  >
+                    <a
+                      href={WA_LINK}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <WaIcon />
+                      Hubungi Kami
+                    </a>
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
-
-      {/* Mobile dropdown */}
-      {isOpen && (
-        <div className="md:hidden bg-background border-t border-border">
-          <div className="flex flex-col px-4 py-3 gap-1">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`rounded-full px-4 py-2 text-sm transition-all ${
-                  isActive(link.href)
-                    ? 'bg-primary text-primary-foreground font-semibold'
-                    : 'text-foreground font-medium hover:bg-muted'
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
-            <div className="flex items-center gap-2 mt-1">
-              <ThemeToggle />
-              <Button
-                asChild
-                className="inline-flex items-center gap-2 rounded-full bg-whatsapp text-whatsapp-foreground hover:bg-whatsapp/90 w-fit"
-              >
-                <a
-                  href={WA_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <WaIcon />
-                  Hubungi Kami
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      )}
     </nav>
   )
 }

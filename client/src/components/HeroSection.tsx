@@ -3,74 +3,100 @@ interface HeroSectionProps {
   subtitle: string;
 }
 
-const bgImages = [
-  { src: '/images/hero-2-image-505x445.png', alt: 'Exalter Students platform' },
-  { src: '/images/achievement-400x524.png', alt: 'Exalter Students achievement' },
-  { src: '/images/event-1-295x319.png', alt: 'Exalter Students event' },
-  { src: '/images/achievement-2-400x581.png', alt: 'Exalter Students achievement 2' },
-  { src: '/images/hero-1-image-820x283.png', alt: 'Exalter Students community' },
-  { src: '/images/achievement-3-2560x2050.png', alt: 'Exalter Students achievement 3' },
-  { src: '/images/achievement-4-1920x1024.jpg', alt: 'Exalter Students achievement 4' },
+/*
+ * Bento column layout — two columns scrolling at different speeds.
+ * Images are assigned based on their aspect ratios (from filenames).
+ * Column A: taller / portrait-ish images
+ * Column B: wider / landscape-ish images + square-ish
+ */
+const colA = [
+  { src: '/images/achievement-400x524.png', alt: 'Achievement' },
+  { src: '/images/achievement-2-400x581.png', alt: 'Achievement 2' },
+  { src: '/images/event-1-295x319.png', alt: 'Event' },
+  { src: '/images/hero-2-image-505x445.png', alt: 'Platform' },
+];
+
+const colB = [
+  { src: '/images/hero-1-image-820x283.png', alt: 'Community' },
+  { src: '/images/achievement-3-2560x2050.png', alt: 'Achievement 3' },
+  { src: '/images/achievement-4-1920x1024.jpg', alt: 'Achievement 4' },
 ];
 
 // Duplicate for seamless loop
-const doubled = [...bgImages, ...bgImages];
+const colALoop = [...colA, ...colA];
+const colBLoop = [...colB, ...colB];
 
 export default function HeroSection({ title, subtitle }: HeroSectionProps) {
   return (
     <>
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-foreground">
-        {/* Scrolling background image marquee */}
-        <div className="absolute inset-0 flex items-center overflow-hidden" aria-hidden="true">
-          <div className="hero-bg-track flex gap-6 items-center">
-            {doubled.map((img, i) => (
-              <img
-                key={i}
-                src={img.src}
-                alt={img.alt}
-                className="h-[70vh] w-auto object-cover rounded-xl shrink-0 opacity-30"
-              />
-            ))}
+      <section className="relative min-h-screen flex flex-col md:flex-row overflow-hidden bg-primary">
+        {/* Left — text content */}
+        <div className="relative z-10 flex flex-col justify-center w-full md:w-1/2 px-8 md:px-12 lg:px-16 py-20 md:py-0">
+          <h1 className="text-3xl md:text-4xl font-bold text-primary-foreground leading-tight">
+            {title}
+          </h1>
+          <p className="mt-4 text-base md:text-lg text-primary-foreground/70 leading-relaxed max-w-md">
+            {subtitle}
+          </p>
+          <div className="mt-8">
+            <a
+              href="/program"
+              className="inline-block px-8 py-3 rounded-lg font-semibold text-cta-foreground bg-cta transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cta"
+            >
+              Mulai Sekarang
+            </a>
           </div>
         </div>
 
-        {/* Dark overlay for readability */}
+        {/* Right — bento image grid scrolling vertically */}
         <div
-          className="absolute inset-0 hero-overlay"
+          className="relative w-full md:w-1/2 h-[60vh] md:h-screen overflow-hidden"
           aria-hidden="true"
-        />
+        >
+          <div className="absolute inset-0 flex gap-3 p-3">
+            {/* Column A — scrolls up */}
+            <div className="flex-1 overflow-hidden">
+              <div className="hero-col-a flex flex-col gap-3">
+                {colALoop.map((img, i) => (
+                  <img
+                    key={`a-${i}`}
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full rounded-xl object-cover"
+                  />
+                ))}
+              </div>
+            </div>
 
-        {/* Foreground text */}
-        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight">
-            {title}
-          </h1>
-          <p className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed">
-            {subtitle}
-          </p>
-          <a
-            href="/program"
-            className="mt-10 inline-block px-10 py-4 rounded-lg font-semibold text-cta-foreground bg-cta transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cta"
-          >
-            Mulai Sekarang
-          </a>
+            {/* Column B — scrolls up at different speed */}
+            <div className="flex-1 overflow-hidden">
+              <div className="hero-col-b flex flex-col gap-3">
+                {colBLoop.map((img, i) => (
+                  <img
+                    key={`b-${i}`}
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full rounded-xl object-cover"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <style>{`
-        @keyframes hero-bg-scroll {
-          from { transform: translateX(0); }
-          to   { transform: translateX(-50%); }
+        @keyframes hero-scroll-up {
+          from { transform: translateY(0); }
+          to   { transform: translateY(-50%); }
         }
-        .hero-bg-track {
-          animation: hero-bg-scroll 60s linear infinite;
+        .hero-col-a {
+          animation: hero-scroll-up 40s linear infinite;
           will-change: transform;
         }
-        .hero-bg-track:hover {
-          animation-play-state: paused;
-        }
-        .hero-overlay {
-          background: linear-gradient(to bottom, rgba(15, 23, 42, 0.55) 0%, rgba(15, 23, 42, 0.70) 100%);
+        .hero-col-b {
+          animation: hero-scroll-up 55s linear infinite;
+          will-change: transform;
         }
       `}</style>
     </>

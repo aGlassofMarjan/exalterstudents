@@ -1,5 +1,3 @@
-import { Card } from '@/components/ui/card';
-
 interface MarqueeSectionProps {
   title: string;
   description: string;
@@ -40,7 +38,11 @@ const partners = [
   { name: 'Unilever', src: '/images/marquee-partners/unilever.png' },
 ];
 
-const doubled = [...partners, ...partners];
+const row1 = partners.slice(0, 16);
+const row2 = partners.slice(16);
+
+const row1Loop = [...row1, ...row1];
+const row2Loop = [...row2, ...row2];
 
 export default function MarqueeSection({ title, description }: MarqueeSectionProps) {
   return (
@@ -49,19 +51,31 @@ export default function MarqueeSection({ title, description }: MarqueeSectionPro
         <h2 className="text-3xl font-bold text-primary mb-4">{title}</h2>
         <p className="text-muted-foreground text-lg">{description}</p>
       </div>
+
+      {/* Row 1 — scrolls left */}
       <div className="overflow-hidden">
-        <div className="marquee-track flex items-center gap-10 whitespace-nowrap">
-          {doubled.map((partner, i) => (
-            <Card
-              key={i}
-              className="inline-flex items-center justify-center rounded-xl px-5 py-3 h-16 min-w-[120px]"
-            >
-              <img
-                src={partner.src}
-                alt={partner.name}
-                className="max-h-10 max-w-[100px] object-contain"
-              />
-            </Card>
+        <div className="marquee-track flex items-center gap-12 whitespace-nowrap">
+          {row1Loop.map((partner, i) => (
+            <img
+              key={`r1-${i}`}
+              src={partner.src}
+              alt={partner.name}
+              className="h-10 max-w-[100px] object-contain opacity-70 hover:opacity-100 transition-opacity shrink-0"
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Row 2 — scrolls right */}
+      <div className="overflow-hidden mt-8">
+        <div className="marquee-track-reverse flex items-center gap-12 whitespace-nowrap">
+          {row2Loop.map((partner, i) => (
+            <img
+              key={`r2-${i}`}
+              src={partner.src}
+              alt={partner.name}
+              className="h-10 max-w-[100px] object-contain opacity-70 hover:opacity-100 transition-opacity shrink-0"
+            />
           ))}
         </div>
       </div>

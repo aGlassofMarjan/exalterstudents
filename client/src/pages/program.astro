@@ -1,9 +1,9 @@
 ---
 import content from '../lib/content-loader';
 import Navigation from '../components/Navigation';
-import ServiceFullSection from '../components/ServiceFullSection.astro';
-import MetricsSection from '../components/MetricsSection.astro';
-import Footer from '../components/Footer.astro';
+import ServiceFullSection from '../components/ServiceFullSection';
+import MetricsSection from '../components/MetricsSection';
+import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
 import '../styles/global.css';
 ---
@@ -36,18 +36,28 @@ import '../styles/global.css';
     <meta name="twitter:title" content="Program — Exalter Students | Inkubasi, Mentorship & Kompetisi" />
     <meta name="twitter:description" content="Jelajahi program Exalter Students: Inkubasi, Mentorship, Kompetisi, Konferensi, Summit, dan Komunitas." />
     <meta name="twitter:image" content="https://www.exalterstudents.com/images/logo.jpeg" />
+
+    <!-- FOWT prevention: apply dark class before content renders -->
+    <script is:inline>
+      (function() {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <Navigation client:load currentPath="/program" />
     <main>
-      <ServiceFullSection
+      <ServiceFullSection client:load
         title={content.serviceFull.title}
         subtitle={content.serviceFull.subtitle}
         cards={content.serviceFull.cards}
       />
-      <MetricsSection metrics={content.metrics} />
+      <MetricsSection client:load metrics={content.metrics} />
     </main>
-    <Footer />
+    <Footer client:load />
     <ScrollToTop client:load />
   </body>
 </html>

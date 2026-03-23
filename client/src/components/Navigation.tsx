@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import ThemeToggle from './ThemeToggle'
 
 interface NavigationProps {
   currentPath: string
@@ -26,14 +28,14 @@ export default function Navigation({ currentPath }: NavigationProps) {
   const isActive = (href: string) => currentPath === href
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-white" style={{ borderBottom: '1px solid #e2e8f0' }}>
+    <nav className="sticky top-0 z-50 w-full bg-background border-b border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
 
           {/* Left — Logo */}
           <a href="/" className="flex items-center gap-2 shrink-0">
             <img src="/images/logo.jpeg" alt="Exalter Students" width="36" height="36" className="rounded-full object-cover" />
-            <span className="text-xl font-bold tracking-tight hidden sm:block" style={{ color: '#1E3A8A' }}>
+            <span className="text-xl font-bold tracking-tight hidden sm:block text-primary">
               Exalter Students
             </span>
           </a>
@@ -44,35 +46,40 @@ export default function Navigation({ currentPath }: NavigationProps) {
               <a
                 key={link.href}
                 href={link.href}
-                className="px-4 py-1.5 rounded-full text-sm transition-all"
-                style={{
-                  color: isActive(link.href) ? '#ffffff' : '#0F172A',
-                  background: isActive(link.href) ? '#1E3A8A' : 'transparent',
-                  fontWeight: isActive(link.href) ? 600 : 500,
-                }}
+                className={`px-4 py-1.5 rounded-full text-sm transition-all ${
+                  isActive(link.href)
+                    ? 'bg-primary text-primary-foreground font-semibold'
+                    : 'text-foreground font-medium hover:bg-muted'
+                }`}
               >
                 {link.label}
               </a>
             ))}
           </div>
 
-          {/* Right — WhatsApp CTA + hamburger */}
+          {/* Right — ThemeToggle + WhatsApp CTA + hamburger */}
           <div className="flex items-center gap-2">
-            <a
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold text-white transition-transform hover:scale-105"
-              style={{ background: '#25D366' }}
-              aria-label="Hubungi kami via WhatsApp"
-            >
-              <WaIcon />
-              Hubungi Kami
-            </a>
+            <ThemeToggle className="hidden sm:inline-flex" />
 
-            <button
-              className="flex md:hidden items-center justify-center rounded-full w-9 h-9 transition-colors hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              style={{ color: '#0F172A' }}
+            <Button
+              asChild
+              className="hidden sm:inline-flex items-center gap-2 rounded-full bg-whatsapp text-whatsapp-foreground hover:bg-whatsapp/90"
+            >
+              <a
+                href={WA_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Hubungi kami via WhatsApp"
+              >
+                <WaIcon />
+                Hubungi Kami
+              </a>
+            </Button>
+
+            <Button
+              variant="ghost"
+              size="icon"
+              className="flex md:hidden rounded-full text-foreground"
               aria-label="Toggle menu"
               aria-expanded={isOpen}
               onClick={() => setIsOpen((prev) => !prev)}
@@ -88,40 +95,45 @@ export default function Navigation({ currentPath }: NavigationProps) {
               ) : (
                 <Menu className="h-5 w-5" aria-hidden="true" />
               )}
-            </button>
+            </Button>
           </div>
         </div>
       </div>
 
       {/* Mobile dropdown */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t" style={{ borderColor: '#e2e8f0' }}>
+        <div className="md:hidden bg-background border-t border-border">
           <div className="flex flex-col px-4 py-3 gap-1">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-full px-4 py-2 text-sm transition-all"
-                style={{
-                  color: isActive(link.href) ? '#ffffff' : '#0F172A',
-                  background: isActive(link.href) ? '#1E3A8A' : 'transparent',
-                  fontWeight: isActive(link.href) ? 600 : 500,
-                }}
+                className={`rounded-full px-4 py-2 text-sm transition-all ${
+                  isActive(link.href)
+                    ? 'bg-primary text-primary-foreground font-semibold'
+                    : 'text-foreground font-medium hover:bg-muted'
+                }`}
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            <a
-              href={WA_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-1 flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white w-fit"
-              style={{ background: '#25D366' }}
-            >
-              <WaIcon />
-              Hubungi Kami
-            </a>
+            <div className="flex items-center gap-2 mt-1">
+              <ThemeToggle />
+              <Button
+                asChild
+                className="inline-flex items-center gap-2 rounded-full bg-whatsapp text-whatsapp-foreground hover:bg-whatsapp/90 w-fit"
+              >
+                <a
+                  href={WA_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <WaIcon />
+                  Hubungi Kami
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       )}

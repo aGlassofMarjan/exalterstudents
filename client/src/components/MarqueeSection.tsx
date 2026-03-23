@@ -1,3 +1,5 @@
+import { Card } from '@/components/ui/card';
+
 interface MarqueeSectionProps {
   title: string;
   description: string;
@@ -42,24 +44,24 @@ const doubled = [...partners, ...partners];
 
 export default function MarqueeSection({ title, description }: MarqueeSectionProps) {
   return (
-    <section className="py-20 bg-[#F8FAFC] overflow-hidden">
+    <section className="py-20 bg-background overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 text-center mb-12">
-        <h2 className="text-3xl font-bold text-[#1E3A8A] mb-4">{title}</h2>
-        <p className="text-slate-600 text-lg">{description}</p>
+        <h2 className="text-3xl font-bold text-primary mb-4">{title}</h2>
+        <p className="text-muted-foreground text-lg">{description}</p>
       </div>
       <div className="overflow-hidden">
         <div className="marquee-track flex items-center gap-10 whitespace-nowrap">
           {doubled.map((partner, i) => (
-            <div
+            <Card
               key={i}
-              className="inline-flex items-center justify-center bg-white rounded-xl shadow-sm border border-slate-200 px-5 py-3 h-16 min-w-[120px]"
+              className="inline-flex items-center justify-center rounded-xl px-5 py-3 h-16 min-w-[120px]"
             >
               <img
                 src={partner.src}
                 alt={partner.name}
                 className="max-h-10 max-w-[100px] object-contain"
               />
-            </div>
+            </Card>
           ))}
         </div>
       </div>

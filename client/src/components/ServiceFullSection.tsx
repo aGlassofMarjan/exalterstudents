@@ -1,13 +1,11 @@
----
-import type { ServiceCard } from '../lib/content-loader';
+import type { ServiceCard } from '@/lib/content-loader';
+import { Card, CardContent } from '@/components/ui/card';
 
-interface Props {
+interface ServiceFullSectionProps {
   title: string;
   subtitle: string;
   cards: ServiceCard[];
 }
-
-const { title, subtitle, cards } = Astro.props;
 
 // Lucide: FlaskConical, Users, Trophy, Monitor, MountainSnow, Heart
 const icons: Record<string, string> = {
@@ -26,25 +24,36 @@ function getIcon(name: string): string {
   }
   return icons['Community'];
 }
----
 
-<section class="py-20" style="background-color: #F8FAFC;">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Header -->
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-[#1E3A8A] mb-4">{title}</h2>
-      <p class="text-slate-600 max-w-3xl mx-auto text-lg leading-relaxed">{subtitle}</p>
-    </div>
-
-    <!-- Service Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {cards.map((card) => (
-        <div class="bg-white rounded-xl shadow-md border border-slate-200 p-8 flex flex-col items-center text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
-          <div class="text-[#1E3A8A] mb-5" set:html={getIcon(card.name)} />
-          <h3 class="text-xl font-semibold text-[#0F172A] mb-3">{card.name}</h3>
-          <p class="text-slate-600 leading-relaxed">{card.description}</p>
+export default function ServiceFullSection({ title, subtitle, cards }: ServiceFullSectionProps) {
+  return (
+    <section className="py-20 bg-background">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-primary mb-4">{title}</h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto text-lg leading-relaxed">{subtitle}</p>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+
+        {/* Service Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {cards.map((card) => (
+            <Card
+              key={card.name}
+              className="flex flex-col items-center text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
+            >
+              <CardContent className="flex flex-col items-center pt-8">
+                <div
+                  className="text-primary mb-5"
+                  dangerouslySetInnerHTML={{ __html: getIcon(card.name) }}
+                />
+                <h3 className="text-xl font-semibold text-card-foreground mb-3">{card.name}</h3>
+                <p className="text-muted-foreground leading-relaxed">{card.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

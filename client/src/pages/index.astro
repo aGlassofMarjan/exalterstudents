@@ -1,13 +1,13 @@
 ---
 import content from '../lib/content-loader';
 import Navigation from '../components/Navigation';
-import HeroSection from '../components/HeroSection.astro';
-import AboutSection from '../components/AboutSection.astro';
-import ServiceBriefSection from '../components/ServiceBriefSection.astro';
-import MetricsSection from '../components/MetricsSection.astro';
+import HeroSection from '../components/HeroSection';
+import AboutSection from '../components/AboutSection';
+import ServiceBriefSection from '../components/ServiceBriefSection';
+import MetricsSection from '../components/MetricsSection';
 import MarqueeSection from '../components/MarqueeSection';
-import TestimonialSection from '../components/TestimonialSection.astro';
-import Footer from '../components/Footer.astro';
+import TestimonialSection from '../components/TestimonialSection';
+import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
 import '../styles/global.css';
 ---
@@ -61,18 +61,28 @@ import '../styles/global.css';
       }
     }
     </script>
+
+    <!-- FOWT prevention: apply dark class before content renders -->
+    <script is:inline>
+      (function() {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <Navigation client:load currentPath="/" />
     <main>
-      <HeroSection title={content.hero.title} subtitle={content.hero.subtitle} />
-      <AboutSection about={content.about} />
-      <ServiceBriefSection title={content.serviceBrief.title} cards={content.serviceBrief.cards} />
-      <MetricsSection metrics={content.metrics} />
+      <HeroSection client:load title={content.hero.title} subtitle={content.hero.subtitle} />
+      <AboutSection client:load about={content.about} />
+      <ServiceBriefSection client:load title={content.serviceBrief.title} cards={content.serviceBrief.cards} />
+      <MetricsSection client:load metrics={content.metrics} />
       <MarqueeSection client:load title={content.marquee.title} description={content.marquee.description} />
-      <TestimonialSection testimonials={content.testimonials} />
+      <TestimonialSection client:load testimonials={content.testimonials} />
     </main>
-    <Footer />
+    <Footer client:load />
     <ScrollToTop client:load />
   </body>
 </html>

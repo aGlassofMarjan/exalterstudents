@@ -1,7 +1,16 @@
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { render, screen, fireEvent } from '@testing-library/react'
 import * as fc from 'fast-check'
 import Navigation from './Navigation'
+
+// Mock ThemeToggle to avoid document.documentElement access in jsdom
+vi.mock('./ThemeToggle', () => ({
+  default: ({ className }: { className?: string }) => (
+    <button data-testid="theme-toggle" className={className} aria-label="Switch to dark mode">
+      Toggle
+    </button>
+  ),
+}))
 
 describe('Navigation', () => {
   it('renders logo text', () => {
@@ -45,17 +54,65 @@ describe('Navigation', () => {
     fireEvent.keyDown(btn, { key: ' ' })
     expect(btn.getAttribute('aria-expanded')).toBe('true')
   })
+
+  it('renders ThemeToggle in the nav bar', () => {
+    render(<Navigation currentPath="/" />)
+    const toggles = screen.getAllByTestId('theme-toggle')
+    expect(toggles.length).toBeGreaterThanOrEqual(1)
+  })
+
+  it('uses shadcn Button for WhatsApp CTA (data-slot="button")', () => {
+    render(<Navigation currentPath="/" />)
+    const waLinks = screen.getAllByText('Hubungi Kami')
+    // At least one WhatsApp button should have data-slot="button" (shadcn Button)
+    const hasShadcnButton = waLinks.some(
+      (el) => el.closest('[data-slot="button"]') !== null
+    )
+    expect(hasShadcnButton).toBe(true)
+  })
+
+  it('uses shadcn Button for hamburger toggle (data-slot="button")', () => {
+    render(<Navigation currentPath="/" />)
+    const btn = screen.getByRole('button', { name: /toggle menu/i })
+    expect(btn.getAttribute('data-slot')).toBe('button')
+  })
+
+  it('has zero inline style attributes that set color values', () => {
+    const { container } = render(<Navigation currentPath="/" />)
+    const allElements = container.querySelectorAll('*')
+    for (const el of allElements) {
+      const style = (el as HTMLElement).getAttribute('style')
+      if (style) {
+        expect(style).not.toMatch(/\bcolor\b/i)
+        expect(style).not.toMatch(/\bbackground\b/i)
+        expect(style).not.toMatch(/\bborder-color\b/i)
+      }
+    }
+  })
+
+  it('uses bg-background instead of bg-white on the nav element', () => {
+    const { container } = render(<Navigation currentPath="/" />)
+    const nav = container.querySelector('nav')
+    expect(nav?.className).toContain('bg-background')
+    expect(nav?.className).not.toContain('bg-white')
+  })
+
+  it('uses border-border instead of hardcoded border colors', () => {
+    const { container } = render(<Navigation currentPath="/" />)
+    const nav = container.querySelector('nav')
+    expect(nav?.className).toContain('border-border')
+  })
 })
 
 /**
  * Property 1: Active Navigation Link
  * Validates: Requirements 1.3
  *
- * For any page path, the corresponding nav link has active styling (bold + primary color),
+ * For any page path, the corresponding nav link has active styling (CSS variable classes),
  * while the other links do not.
  */
 describe('Property 1: Active Navigation Link', () => {
-  const links = [
+  const navLinks = [
     { href: '/', label: 'Beranda' },
     { href: '/program', label: 'Program' },
     { href: '/berita', label: 'Berita' },
@@ -68,30 +125,29 @@ describe('Property 1: Active Navigation Link', () => {
         (path) => {
           const { container, unmount } = render(<Navigation currentPath={path} />)
 
-          // Find all desktop nav links (inside the hidden md:flex container)
-          // We check the inline style color to distinguish active vs inactive
           const allLinks = container.querySelectorAll('a[href]')
 
-          // Filter to nav links (not the logo)
-          const navLinks = Array.from(allLinks).filter((a) =>
-            links.some((l) => l.href === a.getAttribute('href') && a.textContent === l.label)
+          // Filter to nav links (not the logo or WhatsApp)
+          const filteredNavLinks = Array.from(allLinks).filter((a) =>
+            navLinks.some((l) => l.href === a.getAttribute('href') && a.textContent === l.label)
           )
 
-          // There should be nav links rendered (desktop + mobile when open)
-          // At minimum the desktop links are always present
-          const desktopLinks = navLinks.slice(0, 3)
+          // Desktop links are the first 3
+          const desktopLinks = filteredNavLinks.slice(0, 3)
 
           for (const link of desktopLinks) {
             const href = link.getAttribute('href')
-            const style = (link as HTMLElement).style
+            const classes = (link as HTMLElement).className
             if (href === path) {
-              // Active link: primary color and bold
-              expect(style.color).toBe('rgb(30, 58, 138)') // #1E3A8A
-              expect(style.fontWeight).toBe('700')
+              // Active link: primary background, primary-foreground text, semibold
+              expect(classes).toContain('bg-primary')
+              expect(classes).toContain('text-primary-foreground')
+              expect(classes).toContain('font-semibold')
             } else {
-              // Inactive link: text color, not bold
-              expect(style.color).toBe('rgb(15, 23, 42)') // #0F172A
-              expect(style.fontWeight).toBe('500')
+              // Inactive link: foreground text, medium weight
+              expect(classes).toContain('text-foreground')
+              expect(classes).toContain('font-medium')
+              expect(classes).not.toContain('bg-primary')
             }
           }
 

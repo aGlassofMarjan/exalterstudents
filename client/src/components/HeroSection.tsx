@@ -38,12 +38,38 @@ export default function HeroSection({ title, subtitle }: HeroSectionProps) {
           <p className="mt-4 text-base md:text-lg text-primary-foreground/70 leading-relaxed max-w-md">
             {subtitle}
           </p>
-          <div className="mt-8">
+          {/* Stacked member avatars + count */}
+          <div className="mt-8 flex items-center gap-3">
+            <div className="flex -space-x-3">
+              {[
+                '/images/testimony-andi-wijaya.png',
+                '/images/testimony-lilis-kusuma.png',
+                '/images/testimony-rina-sari.png',
+              ].map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt=""
+                  className="w-10 h-10 rounded-full border-2 border-primary object-cover"
+                />
+              ))}
+              <div className="w-10 h-10 rounded-full border-2 border-primary bg-cta flex items-center justify-center text-cta-foreground text-xs font-bold">
+                +
+              </div>
+            </div>
+            <div>
+              <div className="text-lg font-bold text-primary-foreground leading-tight">175+</div>
+              <div className="text-sm text-primary-foreground/60">Students yang berdedikasi</div>
+            </div>
+          </div>
+
+          <div className="mt-6">
             <a
-              href="/program"
+              href="#about"
+              onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }}
               className="inline-block px-8 py-3 rounded-lg font-semibold text-cta-foreground bg-cta transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cta"
             >
-              Mulai Sekarang
+              Lihat Lebih
             </a>
           </div>
         </div>

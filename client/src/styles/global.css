@@ -2,6 +2,8 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/inter";
+@import "@fontsource-variable/playfair-display";
+@import "@fontsource-variable/plus-jakarta-sans";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -84,6 +86,16 @@
 
 @theme inline {
     --font-sans: 'Inter Variable', sans-serif;
+    --font-display: 'Playfair Display Variable', serif;
+    --font-body: 'Plus Jakarta Sans Variable', sans-serif;
+    --color-cream: #FFFBF5;
+    --color-warm-gray: #F5F0EB;
+    --color-text-dark: #1A1A1A;
+    --color-text-muted-warm: #5A5A5A;
+    --color-product-primary: #00599A;
+    --color-product-primary-dark: #003D6B;
+    --color-product-primary-light: #3D8AC7;
+    --color-product-accent: #D4A574;
     --color-cta: var(--cta);
     --color-cta-foreground: var(--cta-foreground);
     --color-whatsapp: var(--whatsapp);
@@ -159,4 +171,81 @@
 }
 .marquee-track-reverse:hover {
   animation-play-state: paused;
+}
+
+/* Product landing page styles */
+.font-display { font-family: 'Playfair Display Variable', serif; }
+.font-body { font-family: 'Plus Jakarta Sans Variable', sans-serif; }
+
+.btn-product {
+  background: linear-gradient(135deg, #00599A 0%, #003D6B 100%);
+  color: #FFFFFF;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-product:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 89, 154, 0.4);
+}
+.btn-product:active { transform: translateY(0); }
+
+.pattern-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300599A' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.price-strike { position: relative; display: inline-block; }
+.price-strike::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 50%;
+  width: 100%; height: 3px;
+  background: #00599A;
+  transform: rotate(-8deg);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes float-anim {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.float-animation { animation: float-anim 4s ease-in-out infinite; }
+
+@keyframes pulse-separator {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes blink-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.slider-track-product {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.slider-dot-product {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #D1D5DB;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.slider-dot-product.active {
+  width: 24px;
+  border-radius: 4px;
+  background: #00599A;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in { opacity: 1; transform: none; transition: none; }
+  .float-animation { animation: none; }
 }

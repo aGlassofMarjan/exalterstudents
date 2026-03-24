@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Paket Super Lengkap Soal & Materi IELTS | Persiapan Skor Tinggi</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00599A',
+            primaryDark: '#003D6B',
+            primaryLight: '#3D8AC7',
+            cream: '#FFFBF5',
+            warmGray: '#F5F0EB',
+            textDark: '#1A1A1A',
+            textMuted: '#5A5A5A',
+            accent: '#D4A574',
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom Styles */
+    body { overflow-x: hidden; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .btn-primary {
+      background: linear-gradient(135deg, #00599A 0%, #003D6B 100%);
+      color: #FFFFFF !important;
+      text-decoration: none !important;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 89, 154, 0.4);
+      color: #FFFFFF !important;
+      text-decoration: none !important;
+    }
+    .btn-primary:active { transform: translateY(0); color: #FFFFFF !important; }
+    .pattern-bg { background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300599A' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+    .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .price-strike { position: relative; display: inline-block; }
+    .price-strike::after { content: ''; position: absolute; left: 0; top: 50%; width: 100%; height: 3px; background: #00599A; transform: rotate(-8deg); }
+    .testimonial-card { background: linear-gradient(145deg, #FFFFFF 0%, #FFFBF5 100%); }
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+    .float-animation { animation: float 4s ease-in-out infinite; }
+    .feature-card { background: #FFFFFF; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0, 89, 154, 0.12); }
+    .feature-card-image { width: 100%; height: 180px; object-fit: cover; background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%); }
+    .feature-card-content { padding: 20px; }
+    .feature-card-badge { position: absolute; top: 12px; right: 12px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(8px); border-radius: 20px; padding: 6px 12px; font-size: 12px; font-weight: 600; color: #00599A; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+    .slider-container { position: relative; overflow: hidden; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); background: #000; }
+    .slider-track { display: flex; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    .slider-slide { min-width: 100%; display: flex; justify-content: center; align-items: flex-start; background: linear-gradient(180deg, #1a1a1a 0%, #2d2d2d 100%); }
+    .slider-image { width: 100%; height: 650px; object-fit: cover; object-position: top center; }
+    .slider-dot { width: 8px; height: 8px; border-radius: 50%; background: #D1D5DB; transition: all 0.3s ease; cursor: pointer; }
+    .slider-dot.active { width: 24px; border-radius: 4px; background: #00599A; }
+    .countdown-container { background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%); border-radius: 20px; padding: 24px 32px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1); position: relative; overflow: hidden; }
+    .countdown-container::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); }
+    .countdown-label-top { background: linear-gradient(135deg, #00599A 0%, #3D8AC7 100%); color: white; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; padding: 6px 16px; border-radius: 20px; display: inline-block; margin-bottom: 16px; text-transform: uppercase; }
+    .countdown-box { background: linear-gradient(180deg, #0D0D0D 0%, #1A1A1A 100%); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 16px 12px; min-width: 80px; text-align: center; position: relative; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05); }
+    .countdown-box::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(255, 255, 255, 0.05); }
+    .countdown-number { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 36px; font-weight: 700; color: #FFFFFF; line-height: 1; text-shadow: 0 2px 10px rgba(0, 89, 154, 0.3); position: relative; z-index: 1; }
+    .countdown-unit { font-size: 11px; color: rgba(255, 255, 255, 0.5); text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; font-weight: 500; }
+    .countdown-separator { color: #00599A; font-size: 28px; font-weight: 700; padding: 0 4px; animation: pulse-separator 1s ease-in-out infinite; }
+    @keyframes pulse-separator { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .countdown-urgency { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+    .countdown-urgency-dot { width: 8px; height: 8px; background: #00599A; border-radius: 50%; animation: blink-dot 1s ease-in-out infinite; }
+    @keyframes blink-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+    .countdown-urgency-text { color: rgba(255, 255, 255, 0.7); font-size: 13px; font-weight: 500; }
+    .bonus-card { background: linear-gradient(145deg, #FFFFFF 0%, #FFF9F0 100%); border: 2px solid #D4A574; position: relative; overflow: hidden; }
+    .bonus-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, #D4A574, #E8C4A0, #D4A574); }
+    .bonus-badge { background: linear-gradient(135deg, #D4A574 0%, #B8956A 100%); color: white; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; box-shadow: 0 2px 8px rgba(212, 165, 116, 0.4); }
+    .bonus-icon-container { width: 80px; height: 80px; background: linear-gradient(135deg, rgba(212, 165, 116, 0.15) 0%, rgba(212, 165, 116, 0.05) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 2px solid rgba(212, 165, 116, 0.3); }
+    .bonus-feature-item { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px dashed rgba(212, 165, 116, 0.2); }
+    .bonus-feature-item:last-child { border-bottom: none; }
+    @media (prefers-reduced-motion: reduce) { .fade-in { opacity: 1; transform: none; transition: none; } .float-animation { animation: none; } .countdown-separator { animation: none; } .countdown-urgency-dot { animation: none; } .feature-card { transition: none; } .slider-track { transition: none; } }
+    @media (max-width: 400px) { .countdown-box { min-width: 65px; padding: 12px 8px; } .countdown-number { font-size: 28px; } .countdown-container { padding: 20px 16px; } }
+  </style>
+</head>
+<body class="bg-cream text-textDark">
+
+  <!-- HERO SECTION -->
+  <section class="w-full py-10 px-4 bg-gradient-to-b from-cream to-warmGray pattern-bg">
+    <div class="w-full max-w-lg mx-auto">
+      <div class="fade-in text-center mb-6">
+        <span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold tracking-wide">Paket Super Lengkap IELTS 2026</span>
+      </div>
+      <div class="fade-in text-center mb-8">
+        <h1 class="font-display text-3xl sm:text-4xl font-bold text-textDark leading-tight mb-4">Ingin Raih IELTS Band 6.5+<br><span class="text-primary">Tapi Bingung Mulai Dari Mana?</span></h1>
+        <p class="text-textMuted text-lg leading-relaxed">Kumpulan lengkap soal latihan, prediksi, dan materi IELTS untuk persiapan Study Abroad, Beasiswa, atau Migrasi.</p>
+      </div>
+      <div class="fade-in relative mb-8">
+        <div class="absolute inset-0 bg-primary/20 rounded-2xl blur-xl transform scale-95"></div>
+        <img src="https://cdn.scalev.id/uploads/1772550301/FxReNOoWqTpyslo2Zz0dbQ/1772550301253-Display-Produk.webp" alt="Paket Materi IELTS Lengkap" class="relative w-full rounded-2xl shadow-xl float-animation">
+        <div class="absolute -top-3 -right-3 bg-accent text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">Hemat 90%</div>
+      </div>
+      <div class="fade-in flex justify-center gap-6 mb-8">
+        <div class="text-center"><div class="font-display text-2xl font-bold text-primary">Cambridge</div><div class="text-sm text-textMuted">Books 1-21</div></div>
+        <div class="w-px bg-gray-200"></div>
+        <div class="text-center"><div class="font-display text-2xl font-bold text-primary">Audio</div><div class="text-sm text-textMuted">MP3 Files</div></div>
+        <div class="w-px bg-gray-200"></div>
+        <div class="text-center"><div class="font-display text-2xl font-bold text-primary">500+</div><div class="text-sm text-textMuted">Soal Latihan</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM SECTION -->
+  <section class="w-full py-12 px-4 bg-white"><div class="w-full max-w-lg mx-auto"><div class="fade-in mb-8"><h2 class="font-display text-2xl sm:text-3xl font-bold text-textDark mb-6 text-center">Apakah Ini yang Kamu Rasakan?</h2></div><div class="space-y-4"><div class="fade-in flex items-start gap-4 p-4 bg-blue-50 rounded-xl border border-blue-100"><div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center"><svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg></div><div><h3 class="font-semibold text-textDark mb-1">Bingung Mulai Belajar</h3><p class="text-textMuted text-sm">Banyak materi di internet, tapi gak tau mana yang efektif. Akhirnya belajar nggak terarah dan waktu terbuang sia-sia.</p></div></div><div class="fade-in flex items-start gap-4 p-4 bg-blue-50 rounded-xl border border-blue-100"><div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center"><svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><div><h3 class="font-semibold text-textDark mb-1">Biaya Kursus Mahal</h3><p class="text-textMuted text-sm">Kursus IELTS persiapan bisa mencapai jutaan rupiah. Belum lagi beli buku latihan asli yang harganya selangit.</p></div></div><div class="fade-in flex items-start gap-4 p-4 bg-blue-50 rounded-xl border border-blue-100"><div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center"><svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><div><h3 class="font-semibold text-textDark mb-1">Takut Gagal Target Skor</h3><p class="text-textMuted text-sm">Butuh skor minimal untuk beasiswa atau visa, tapi ragu dengan kemampuan sendiri. Nggak ada panduan strategi jitunya.</p></div></div></div></div></section>
+
+  <!-- AGITATE SECTION -->
+  <section class="w-full py-12 px-4 bg-gradient-to-b from-white to-warmGray"><div class="w-full max-w-lg mx-auto"><div class="fade-in text-center mb-8"><h2 class="font-display text-2xl sm:text-3xl font-bold text-textDark mb-4">Bayangkan Kalau Kamu Terus Menunda...</h2><p class="text-textMuted leading-relaxed">Waktu pendaftaran beasiswa atau universitas semakin dekat. Tanpa skor IELTS yang memadai, peluangmu untuk study abroad, karir internasional, atau migrasi akan tertunda bahkan gagal total.</p></div><div class="fade-in bg-gradient-to-r from-primary to-primaryDark p-6 rounded-2xl text-white mb-6"><div class="flex items-center gap-3 mb-4"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg><span class="font-semibold text-lg">Fakta Penting IELTS</span></div><div class="space-y-3"><div class="flex items-start gap-3"><div class="flex-shrink-0 w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div><p class="text-white text-sm leading-relaxed">IELTS adalah syarat utama beasiswa LPDP, Chevening, dan universitas top dunia.</p></div><div class="flex items-start gap-3"><div class="flex-shrink-0 w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div><p class="text-white text-sm leading-relaxed">Perusahaan multinasional mensyaratkan IELTS untuk posisi strategis dengan gaji tinggi.</p></div><div class="flex items-start gap-3"><div class="flex-shrink-0 w-6 h-6 bg-white/20 rounded-full flex items-center justify-center mt-0.5"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div><p class="text-white text-sm leading-relaxed">Untuk migrasi ke Australia, Kanada, atau UK, skor IELTS adalah kunci utama visa.</p></div></div></div></div></section>
+
+  <!-- SOLUTION SECTION -->
+  <section class="w-full py-12 px-4 bg-warmGray pattern-bg"><div class="w-full max-w-lg mx-auto"><div class="fade-in text-center mb-8"><span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">Solusi Tepat Untukmu</span><h2 class="font-display text-2xl sm:text-3xl font-bold text-textDark mb-4">Kumpulan Materi IELTS Super Lengkap</h2><p class="text-textMuted leading-relaxed mb-6">Semua yang kamu butuhkan untuk menguasai IELTS: Latihan soal, audio listening, contoh writing, dan prediksi soal terbaru. Semua dalam satu paket.</p><div class="relative inline-block"><div class="absolute inset-0 bg-primary/10 rounded-2xl blur-2xl transform scale-105"></div><img src="https://cdn.scalev.id/uploads/1772550317/tuEgztr72zWCnEdEYFSP0Q/1772550317533-Frame-10.webp" alt="Konten Paket IELTS" class="relative w-full max-w-md rounded-2xl shadow-2xl mx-auto"></div></div></div></section>
+
+  <!-- WHAT YOU GET SECTION -->
+  <section class="w-full py-12 px-4 bg-white"><div class="w-full max-w-lg mx-auto"><div class="fade-in text-center mb-8"><span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">Konten Premium</span><h2 class="font-display text-2xl sm:text-3xl font-bold text-textDark mb-4">Apa yang Kamu Dapatkan?</h2><p class="text-textMuted leading-relaxed">Materi lengkap mencakup 4 skill utama IELTS: Listening, Reading, Writing, dan Speaking.</p></div><div class="space-y-4 mb-8"><div class="fade-in feature-card"><div class="relative"><img src="https://cdn.scalev.id/uploads/1772551185/4nzneRlbrldI8o6NSsTQtQ/1772551184374-Cambridge-Series-(1).webp" alt="Cambridge IELTS Books" class="feature-card-image"><div class="feature-card-badge">Books 1-21</div></div><div class="feature-card-content"><h3 class="font-semibold text-textDark mb-2">Cambridge IELTS Series 1-21</h3><p class="text-textMuted text-sm leading-relaxed">Kumpulan buku resmi latihan soal IELTS dari Cambridge. Wajib punya untuk semua peserta IELTS.</p></div></div><div class="fade-in feature-card"><div class="relative"><img src="https://cdn.scalev.id/uploads/1772315622/OwXMNQ4ogCNwgKsoL1v6eQ/1772315622664-image-1-(5).webp" class="feature-card-image"><div class="feature-card-badge">Audio MP3</div></div><div class="feature-card-content"><h3 class="font-semibold text-textDark mb-2">Audio Listening & Scripts</h3><p class="text-textMuted text-sm leading-relaxed">File audio lengkap untuk latihan listening beserta transkrip soal untuk belajar efektif.</p></div></div><div class="fade-in feature-card"><div class="relative"><img src="https://cdn.scalev.id/uploads/1772551756/XrK0-Fr5dDd1YD5yxQoNcA/1772551756655-Cambridge-Series-(2).webp" alt="Writing Samples" class="feature-card-image"><div class="feature-card-badge">Band 9 Samples</div></div><div class="feature-card-content"><h3 class="font-semibold text-textDark mb-2">Contoh Writing Band 6.5 - 9.0</h3><p class="text-textMuted text-sm leading-relaxed">Ratusan contoh jawaban Task 1 & Task 2 dengan skor tinggi untuk panduan penulisanmu.</p></div></div><div class="fade-in feature-card"><div class="relative"><img src="https://cdn.scalev.id/uploads/1772550350/ghEoFDVAO6hRctN83sahJw/1772550350656-Prediction-Test.webp" alt="Prediction Tests" class="feature-card-image"><div class="feature-card-badge">Update 2026</div></div><div class="feature-card-content"><h3 class="font-semibold text-textDark mb-2">Prediksi Soal & Tips Trik</h3><p class="text-textMuted text-sm leading-relaxed">Kumpulan prediksi soal terbaru dan strategi mengerjakan soal IELTS secara efisien.</p></div></div></div></div></section>
+
+  <!-- SOCIAL PROOF WITH SLIDER -->
+  <section class="w-full py-12 px-4 bg-white">
+    <div class="w-full max-w-lg mx-auto">
+      <div class="fade-in text-center mb-8">
+        <h2 class="font-display text-2xl sm:text-3xl font-bold text-textDark mb-4">Dipercaya Ribuan Pelajar Indonesia</h2>
+      </div>
+      <div class="fade-in relative mb-8">
+        <div class="slider-container">
+          <div id="slider-track" class="slider-track">
+            <div class="slider-slide"><img src="https://cdn.scalev.id/uploads/1772932987/Y-9gBfazL7Zna5JGa_6DZw/1772932987237-Frame-13.webp" alt="Testimoni 1" class="slider-image"></div>
+            <div class="slider-slide"><img src="https://cdn.scalev.id/uploads/1772932993/sBVwjK1tcLHhq0hINF6LlQ/1772932993033-Frame-14.webp" alt="Testimoni 2" class="slider-image"></div>
+            <div class="slider-slide"><img src="https://cdn.scalev.id/uploads/1772932998/egh1nmTijj2dY2Aw6pFV-A/1772932998525-Frame-15.webp" alt="Testimoni 3" class="slider-image"></div>
+          </div>
+        </div>
+        <div class="flex justify-center gap-2 mt-4" id="slider-dots">
+          <button class="slider-dot" data-index="0"></button>
+          <button class="slider-dot" data-index="1"></button>
+          <button class="slider-dot active" data-index="2"></button>
+        </div>
+      </div>
+      <div class="fade-in flex justify-center gap-8">
+        <div class="text-center"><div class="font-display text-3xl font-bold text-primary">5,000+</div><div class="text-sm text-textMuted">Pembeli Puas</div></div>
+        <div class="text-center"><div class="font-display text-3xl font-bold text-primary">4.9</div><div class="text-sm text-textMuted">Rating Rata-rata</div></div>
+        <div class="text-center"><div class="font-display text-3xl font-bold text-primary">99%</div><div class="text-sm text-textMuted">Rekomendasi</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (condensed for brevity but kept all) -->
+  <section class="w-full py-12 px-4 bg-warmGray"><div class="w-full max-w-lg mx-auto"><div class="fade-in text-center mb-8"><h2 class="font-display text-2xl sm:text-3xl font-bold text-textDark mb-4">Kisah Sukses Mereka</h2><p class="text-textMuted text-sm">Testimoni dari pengguna yang berhasil meraih skor IELTS impian</p></div><div class="space-y-4"><div class="fade-in testimonial-card p-5 rounded-xl shadow-sm border border-white"><div class="flex items-center gap-3 mb-3"><img src="https://cdn.scalev.id/uploads/1772553905/qqiwZl8XkqbRo0S7eyoSBA/1772553904890-Testi-IELTS-3.webp" alt="Sarah Putri" class="w-12 h-12 rounded-full object-cover"><div><div class="font-semibold text-textDark">Sarah Putri</div><div class="text-sm text-textMuted">Mahasiswi S2 Imperial College London</div></div></div><div class="flex items-center gap-2 mb-2"><span class="inline-block bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded text-xs font-semibold">Penerima LPDP</span><div class="flex gap-0.5"><svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg><svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg><svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg><svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg><svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg></div></div><p class="text-textMuted text-sm leading-relaxed">"Berkat latihan soal dari paket ini, saya berhasil naik skor dari 6.0 ke 7.5 dalam 2 bulan! Materinya sangat mirip dengan soal asli ujian. Sekarang saya sudah mulai kuliah S2 dan semua proses seleksi terasa jauh lebih siap."</p></div><div class="fade-in testimonial-card p-5 rounded-xl shadow-sm border border-white"><div class="flex items-center gap-3 mb-3"><img src="https://cdn.scalev.id/uploads/1772553913/4iX_Mnqx4yXVeQZoxtTBOw/1772553913366-Testi-IELTS-4.webp" alt="Rizky Mahendra" class="w-12 h-12 rounded-full object-cover"><div><div class="font-semibold text-textDark">Rizky Mahendra</div><div class="text-sm text-textMuted">Joint Master Student Sorbonne University</div></div></div><div class="flex items-center gap-2 mb-2"><span class="inline-block bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-semibold">Awardee Erasmus Mundus</span><div class="flex gap-0.5"><svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg><svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg><svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg><svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg><svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"></path></svg></div></div><p class="text-textMuted text-sm leading-relaxed">"Saya perlu skor IELTS tinggi untuk program multi-country di Eropa. Latihan dari ebook ini sangat membantu memahami pola soal dan manajemen waktu. Hasilnya saya lolos seleksi dan sekarang kuliah lintas negara."</p></div></div></div></section>
+
+  <!-- OBJECTION HANDLING -->
+  <section class="w-full py-12 px-4 bg-white"><div class="w-full max-w-lg mx-auto"><div class="fade-in text-center mb-8"><h2 class="font-display text-2xl sm:text-3xl font-bold text-textDark mb-4">Masih Ada Keraguan?</h2><p class="text-textMuted">Jawaban untuk kekhawatiran kamu</p></div><div class="space-y-4"><div class="fade-in bg-warmGray p-5 rounded-xl"><div class="flex items-start gap-3"><div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><div><h3 class="font-semibold text-textDark mb-2">"Apakah materinya update?"</h3><p class="text-textMuted text-sm leading-relaxed">Ya, paket ini berisi seri Cambridge terbaru hingga 2026 dan prediksi soal yang relevan dengan format ujian IELTS saat ini (Academic & General Training).</p></div></div></div><div class="fade-in bg-warmGray p-5 rounded-xl"><div class="flex items-start gap-3"><div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div><div><h3 class="font-semibold text-textDark mb-2">"Format file apa? Ribet gak?"</h3><p class="text-textMuted text-sm leading-relaxed">Semua file dalam format PDF dan MP3 yang bisa dibuka di HP atau laptop. Tinggal download atau baca online, praktis banget!</p></div></div></div><div class="fade-in bg-warmGray p-5 rounded-xl"><div class="flex items-start gap-3"><div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg></div><div><h3 class="font-semibold text-textDark mb-2">"Cocok untuk pemula?"</h3><p class="text-textMuted text-sm leading-relaxed">Sangat cocok. Selain soal latihan, ada tips & trik serta contoh writing dari nol sampai mahir. Cocok untuk yang baru mulai belajar IELTS.</p></div></div></div></div></div></section>
+
+  <!-- BONUS SECTION -->
+  <section class="w-full py-12 px-4 bg-gradient-to-b from-white to-cream pattern-bg"><div class="w-full max-w-lg mx-auto"><div class="fade-in text-center mb-8"><span class="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-4">Bonus Spesial</span><h2 class="font-display text-2xl sm:text-3xl font-bold text-textDark mb-4">Bonus Eksklusif untuk Pembeli Hari Ini</h2></div><div class="fade-in bonus-card rounded-2xl shadow-xl p-6 mb-6"><div class="text-center mb-5"><div class="bonus-icon-container mb-4"><svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div><h3 class="font-display text-xl font-bold text-textDark mb-2">Essential Vocabulary for IELTS</h3><span class="bonus-badge">Nilai: Rp 150.000</span></div><p class="text-textMuted text-sm leading-relaxed text-center mb-5">Ebook kosakata akademik penting yang sering muncul di ujian IELTS. Lengkap dengan definisi dan contoh penggunaan dalam kalimat.</p><div class="bg-white/60 rounded-xl p-4 mb-5"><div class="bonus-feature-item"><div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center"><svg class="w-3 h-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div><span class="text-sm text-textDark">2000+ Kosakata Akademik</span></div><div class="bonus-feature-item"><div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center"><svg class="w-3 h-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div><span class="text-sm text-textDark">Contoh Penggunaan Kontekstual</span></div><div class="bonus-feature-item"><div class="flex-shrink-0 w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center"><svg class="w-3 h-3 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg></div><span class="text-sm text-textDark">Tips Menghafal Efektif</span></div></div><div class="text-center"><span class="inline-flex items-center gap-2 text-accent font-semibold text-sm"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>Gratis untuk pembeli hari ini</span></div></div></div></section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="w-full py-12 px-4 bg-cream"><div class="w-full max-w-lg mx-auto"><div class="fade-in text-center mb-8"><h2 class="font-display text-2xl sm:text-3xl font-bold text-textDark mb-4">Perbandingan dengan Lainnya</h2></div><div class="fade-in overflow-x-auto"><table class="w-full bg-white rounded-xl shadow-sm overflow-hidden"><thead><tr class="bg-primary text-white"><th class="py-3 px-4 text-left text-sm font-semibold">Fitur</th><th class="py-3 px-4 text-center text-sm font-semibold">Paket Kami</th><th class="py-3 px-4 text-center text-sm font-semibold">Kursus</th></tr></thead><tbody class="divide-y divide-gray-100"><tr><td class="py-3 px-4 text-sm text-textMuted">Cambridge Books 1-21</td><td class="py-3 px-4 text-center"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td><td class="py-3 px-4 text-center text-sm text-textMuted">Terpisah</td></tr><tr class="bg-gray-50"><td class="py-3 px-4 text-sm text-textMuted">Harga</td><td class="py-3 px-4 text-center text-sm font-semibold text-primary">Rp 99.000</td><td class="py-3 px-4 text-center text-sm text-textMuted">3-7 Juta</td></tr><tr><td class="py-3 px-4 text-sm text-textMuted">Audio Listening MP3</td><td class="py-3 px-4 text-center"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td><td class="py-3 px-4 text-center"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td></tr><tr class="bg-gray-50"><td class="py-3 px-4 text-sm text-textMuted">Akses Selamanya</td><td class="py-3 px-4 text-center"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td><td class="py-3 px-4 text-center"><svg class="w-5 h-5 text-red-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td></tr><tr><td class="py-3 px-4 text-sm text-textMuted">Belajar Mandiri</td><td class="py-3 px-4 text-center"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td><td class="py-3 px-4 text-center"><svg class="w-5 h-5 text-red-400 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td></tr></tbody></table></div></div></section>
+
+  <!-- TIMELINE -->
+  <section class="w-full py-12 px-4 bg-white"><div class="w-full max-w-lg mx-auto"><div class="fade-in text-center mb-8"><h2 class="font-display text-2xl sm:text-3xl font-bold text-textDark mb-4">Perjalanan Persiapan IELTS-mu</h2><p class="text-textMuted">Tahapan mencapai skor target dengan panduan ebook ini</p></div><div class="relative"><div class="absolute left-4 top-0 bottom-0 w-0.5 bg-primary/20"></div><div class="fade-in relative pl-10 pb-8"><div class="absolute left-2 w-5 h-5 bg-primary rounded-full border-4 border-white shadow"></div><div class="bg-warmGray p-4 rounded-xl"><div class="text-xs text-primary font-semibold mb-1">Minggu 1-2</div><h3 class="font-semibold text-textDark mb-1">Fase Diagnosis & Dasar</h3><p class="text-sm text-textMuted">Kenali format ujian IELTS, ukur kemampuan awal dengan diagnostic test, dan mulai bangun fondasi kosakata dasar.</p></div></div><div class="fade-in relative pl-10 pb-8"><div class="absolute left-2 w-5 h-5 bg-primary rounded-full border-4 border-white shadow"></div><div class="bg-warmGray p-4 rounded-xl"><div class="text-xs text-primary font-semibold mb-1">Bulan 1</div><h3 class="font-semibold text-textDark mb-1">Fase Skill Building</h3><p class="text-sm text-textMuted">Fokus penguatan Listening & Reading. Latihan intensif grammar dan pemahaman teks akademik menggunakan Cambridge Books.</p></div></div><div class="fade-in relative pl-10 pb-8"><div class="absolute left-2 w-5 h-5 bg-primary rounded-full border-4 border-white shadow"></div><div class="bg-warmGray p-4 rounded-xl"><div class="text-xs text-primary font-semibold mb-1">Bulan 2</div><h3 class="font-semibold text-textDark mb-1">Fase Writing & Speaking</h3><p class="text-sm text-textMuted">Kuasai struktur Writing Task 1 & 2. Latih fluency speaking dengan contoh audio native speaker dan template jawaban.</p></div></div><div class="fade-in relative pl-10 pb-8"><div class="absolute left-2 w-5 h-5 bg-primary rounded-full border-4 border-white shadow"></div><div class="bg-warmGray p-4 rounded-xl"><div class="text-xs text-primary font-semibold mb-1">Bulan 3</div><h3 class="font-semibold text-textDark mb-1">Fase Practice Test</h3><p class="text-sm text-textMuted">Mengerjakan full test Cambridge Books secara bertahap. Melatih manajemen waktu dan akurasi menjawab soal.</p></div></div><div class="fade-in relative pl-10"><div class="absolute left-2 w-5 h-5 bg-accent rounded-full border-4 border-white shadow"></div><div class="bg-accent/10 p-4 rounded-xl border border-accent/30"><div class="text-xs text-accent font-semibold mb-1">Bulan 4+</div><h3 class="font-semibold text-textDark mb-1">Fase Exam Ready</h3><p class="text-sm text-textMuted">Tryout penuh (Full Test) berkali-kali. Evaluasi skor akhir dan perbaiki weak spot. Siap tempur raih Band 6.5+!</p></div></div></div></div></section>
+
+  <!-- SCARCITY & PRICING -->
+  <section class="w-full py-12 px-4 bg-gradient-to-b from-white to-primary/5"><div class="w-full max-w-lg mx-auto"><div class="fade-in text-center mb-8"><div class="countdown-container"><div class="countdown-label-top">Penawaran Berakhir Dalam</div><div class="flex items-center justify-center gap-2 sm:gap-3"><div class="countdown-box"><div id="hours" class="countdown-number">02</div><div class="countdown-unit">Jam</div></div><span class="countdown-separator">:</span><div class="countdown-box"><div id="minutes" class="countdown-number">37</div><div class="countdown-unit">Menit</div></div><span class="countdown-separator">:</span><div class="countdown-box"><div id="seconds" class="countdown-number">45</div><div class="countdown-unit">Detik</div></div></div><div class="countdown-urgency"><div class="countdown-urgency-dot"></div><span class="countdown-urgency-text">Harga akan kembali normal setelah timer habis</span></div></div></div><div class="fade-in bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-primary/20"><div class="bg-gradient-to-r from-primary to-primaryDark p-6 text-center text-white"><h3 class="font-display text-xl font-bold mb-2">Paket Super Lengkap IELTS</h3><p class="text-white/80 text-sm">Akses Selamanya + Semua Bonus</p></div><div class="p-6 text-center border-b border-gray-100"><div class="mb-2"><span class="text-textMuted text-sm">Harga Normal</span><div class="price-strike inline-block ml-2 text-xl text-textMuted">Rp 1.850.000</div></div><div class="font-display text-5xl font-bold text-primary mb-2">Rp 99.000</div><div class="inline-block bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">Hemat Rp 1.751.000</div></div><div class="p-6 bg-warmGray"><h4 class="font-semibold text-textDark mb-4 text-center">Total Value yang Kamu Dapat:</h4><div class="space-y-2 mb-4"><div class="flex justify-between text-sm"><span class="text-textMuted">Cambridge IELTS Series 1-21</span><span class="text-textDark font-medium">Rp 1.500.000</span></div><div class="flex justify-between text-sm"><span class="text-textMuted">Audio Listening & Scripts</span><span class="text-textDark font-medium">Rp 200.000</span></div><div class="flex justify-between text-sm"><span class="text-textMuted">Bonus: Essential Vocabulary</span><span class="text-textDark font-medium">Rp 150.000</span></div><div class="border-t border-gray-200 pt-2 mt-2"><div class="flex justify-between"><span class="font-semibold text-textDark">Total Value</span><span class="font-semibold text-textDark">Rp 1.850.000</span></div></div></div><div class="bg-primary/10 p-3 rounded-lg text-center"><div class="text-sm text-textMuted">Kamu Bayar Hanya</div><div class="font-display text-2xl font-bold text-primary">Rp 99.000</div></div></div><div class="p-6"><a href="https://satutoko.myscalev.com/checkout-ielts" class="btn-primary block w-full py-4 rounded-xl text-lg font-bold shadow-lg mb-4 text-center">Beli Sekarang</a><div class="flex justify-center gap-4 mb-4"><div class="flex items-center gap-1 text-xs text-textMuted"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg><span>Pembayaran Aman</span></div><div class="flex items-center gap-1 text-xs text-textMuted"><svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg><span>Akses Instant</span></div></div><p class="text-center text-xs text-textMuted">Sudah dipercaya 5,000+ pejuang IELTS di seluruh Indonesia.</p></div></div></div></section>
+
+  <!-- GUARANTEE -->
+  <section class="w-full py-12 px-4 bg-white"><div class="w-full max-w-lg mx-auto"><div class="fade-in bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-2xl border border-green-100"><div class="flex items-start gap-4"><div class="flex-shrink-0 w-16 h-16 bg-green-100 rounded-full flex items-center justify-center"><svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg></div><div><h3 class="font-display text-xl font-bold text-textDark mb-2">Jaminan Kepuasan</h3><p class="text-textMuted text-sm leading-relaxed">Kami yakin paket ini akan membantu persiapan IELTS kamu. Jika ada kendala akses atau pertanyaan, tim support kami siap membantu kapan saja.</p></div></div></div></div></section>
+
+  <!-- FAQ -->
+  <section class="w-full py-12 px-4 bg-warmGray"><div class="w-full max-w-lg mx-auto"><div class="fade-in text-center mb-8"><h2 class="font-display text-2xl sm:text-3xl font-bold text-textDark mb-4">Pertanyaan yang Sering Ditanyakan</h2></div><div class="space-y-3" id="faq-container"><div class="fade-in faq-item bg-white rounded-xl overflow-hidden shadow-sm"><button class="faq-trigger w-full p-4 text-left flex items-center justify-between" aria-expanded="false"><span class="font-semibold text-textDark pr-4">Format file apa saja yang akan saya dapatkan?</span><svg class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-content hidden px-4 pb-4"><p class="text-textMuted text-sm">Kamu akan mendapatkan file dalam format PDF untuk buku dan dokumen, serta MP3 untuk audio listening. Semua bisa diakses via HP atau Laptop.</p></div></div><div class="fade-in faq-item bg-white rounded-xl overflow-hidden shadow-sm"><button class="faq-trigger w-full p-4 text-left flex items-center justify-between" aria-expanded="false"><span class="font-semibold text-textDark pr-4">Apakah cocok untuk IELTS General Training?</span><svg class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-content hidden px-4 pb-4"><p class="text-textMuted text-sm">Ya, paket ini mencakup materi untuk Academic dan General Training. Ada konten spesifik yang berbeda untuk kedua tipe test tersebut.</p></div></div><div class="fade-in faq-item bg-white rounded-xl overflow-hidden shadow-sm"><button class="faq-trigger w-full p-4 text-left flex items-center justify-between" aria-expanded="false"><span class="font-semibold text-textDark pr-4">Berapa lama aksesnya berlaku?</span><svg class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-content hidden px-4 pb-4"><p class="text-textMuted text-sm">Akses berlaku selamanya (lifetime). Sekali beli, kamu bisa mengakses kapan saja dan mendapatkan update materi jika ada.</p></div></div><div class="fade-in faq-item bg-white rounded-xl overflow-hidden shadow-sm"><button class="faq-trigger w-full p-4 text-left flex items-center justify-between" aria-expanded="false"><span class="font-semibold text-textDark pr-4">Metode pembayaran apa saja?</span><svg class="w-5 h-5 text-primary flex-shrink-0 faq-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-content hidden px-4 pb-4"><p class="text-textMuted text-sm">Kami menerima transfer bank (BCA, Mandiri, BNI, BRI), E-Wallet (GoPay, OVO, Dana, ShopeePay), dan QRIS. Proses instan otomatis.</p></div></div></div></div></section>
+
+  <!-- FINAL CTA -->
+  <section class="w-full py-12 px-4 bg-gradient-to-b from-warmGray to-cream pattern-bg"><div class="w-full max-w-lg mx-auto"><div class="fade-in text-center mb-8"><h2 class="font-display text-2xl sm:text-3xl font-bold text-textDark mb-4">Raih Skor IELTS Impianmu Sekarang</h2><p class="text-textMuted leading-relaxed">Jangan biarkan skor IELTS menghalangi masa depanmu. Mulai persiapan terbaik dengan harga terjangkau hari ini.</p></div><div class="fade-in bg-white p-6 rounded-2xl shadow-xl mb-6"><div class="text-center mb-4"><div class="price-strike inline-block text-lg text-textMuted mb-2">Rp 1.850.000</div><div class="font-display text-4xl font-bold text-primary">Rp 99.000</div></div><a href="https://satutoko.myscalev.com/checkout-ielts" class="btn-primary block w-full py-4 rounded-xl text-lg font-bold shadow-lg mb-4 text-center">Beli Sekarang</a><div class="flex justify-center items-center gap-4 text-xs text-textMuted"><div class="flex items-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg><span>Pembayaran Aman</span></div><span>|</span><div class="flex items-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg><span>Akses Instant</span></div></div></div></div></section>
+
+  <!-- COPYRIGHT -->
+  <div class="w-full py-6 px-4 bg-textDark text-center"><p class="text-gray-400 text-sm">© 2025 Kumpulan Materi IELTS. All rights reserved.</p></div>
+
+  <script>
+    (function() {
+      // Countdown timer
+      let hours = 2, minutes = 37, seconds = 45;
+      const hoursEl = document.getElementById('hours');
+      const minutesEl = document.getElementById('minutes');
+      const secondsEl = document.getElementById('seconds');
+      if (hoursEl && minutesEl && secondsEl) {
+        function updateCountdown() {
+          if (seconds > 0) seconds--;
+          else if (minutes > 0) { minutes--; seconds = 59; }
+          else if (hours > 0) { hours--; minutes = 59; seconds = 59; }
+          else { hours = 2; minutes = 37; seconds = 45; }
+          hoursEl.textContent = String(hours).padStart(2, '0');
+          minutesEl.textContent = String(minutes).padStart(2, '0');
+          secondsEl.textContent = String(seconds).padStart(2, '0');
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      }
+
+      // Slider
+      let currentSlide = 0;
+      const totalSlides = 3;
+      const sliderTrack = document.getElementById('slider-track');
+      const sliderDots = document.querySelectorAll('.slider-dot');
+      if (sliderTrack && sliderDots.length) {
+        function goToSlide(index) {
+          currentSlide = index;
+          sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+          sliderDots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSlide);
+          });
+        }
+        function nextSlide() { goToSlide((currentSlide + 1) % totalSlides); }
+        sliderDots.forEach(dot => {
+          dot.addEventListener('click', () => goToSlide(parseInt(dot.getAttribute('data-index'))));
+        });
+        setInterval(nextSlide, 4000);
+      }
+
+      // Scroll reveal (fade-in)
+      const fadeElements = document.querySelectorAll('.fade-in');
+      if (fadeElements.length) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        fadeElements.forEach(el => observer.observe(el));
+      }
+
+      // FAQ accordion
+      document.querySelectorAll('.faq-item').forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        const content = item.querySelector('.faq-content');
+        const icon = item.querySelector('.faq-icon');
+        if (trigger && content && icon) {
+          trigger.addEventListener('click', () => {
+            const expanded = trigger.getAttribute('aria-expanded') === 'true';
+            // close all others
+            document.querySelectorAll('.faq-item').forEach(other => {
+              const t = other.querySelector('.faq-trigger');
+              const c = other.querySelector('.faq-content');
+              const i = other.querySelector('.faq-icon');
+              if (t && c && i) {
+                t.setAttribute('aria-expanded', 'false');
+                c.classList.add('hidden');
+                i.style.transform = 'rotate(0deg)';
+              }
+            });
+            if (!expanded) {
+              trigger.setAttribute('aria-expanded', 'true');
+              content.classList.remove('hidden');
+              icon.style.transform = 'rotate(180deg)';
+            }
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -55,8 +55,19 @@ export default function Navigation({ currentPath }: NavigationProps) {
             ))}
           </div>
 
-          {/* Right — ThemeToggle + WhatsApp CTA + mobile Sheet trigger */}
+          {/* Right — IELTS + ThemeToggle + WhatsApp CTA + mobile Sheet trigger */}
           <div className="flex items-center gap-2">
+            <Button
+              asChild
+              variant="outline"
+              className="hidden sm:inline-flex items-center gap-1 rounded-full border-primary text-primary font-semibold hover:bg-primary hover:text-primary-foreground relative"
+            >
+              <a href="/product">
+                IELTS
+                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none">NEW</span>
+              </a>
+            </Button>
+
             <ThemeToggle className="hidden sm:inline-flex" />
 
             <Button
@@ -112,6 +123,15 @@ export default function Navigation({ currentPath }: NavigationProps) {
                       </a>
                     </SheetClose>
                   ))}
+                  <SheetClose asChild>
+                    <a
+                      href="/product"
+                      className="rounded-full px-4 py-2 text-sm font-semibold text-primary border border-primary hover:bg-primary hover:text-primary-foreground transition-all text-center relative"
+                    >
+                      IELTS
+                      <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none">NEW</span>
+                    </a>
+                  </SheetClose>
                 </div>
 
                 <div className="flex items-center gap-2 px-4 mt-4">

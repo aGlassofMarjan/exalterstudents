@@ -38,7 +38,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://instagram.com/exalterstudents"
+                  href="https://instagram.com/exalter_students"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-background dark:hover:text-foreground transition-colors text-sm flex items-center gap-2"

@@ -1,0 +1,28 @@
+---
+import Navigation from '../components/Navigation';
+import IRIFLanding from '../components/IRIFLanding';
+import Footer from '../components/Footer';
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo-1.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IRIF 2026 - International Research and Innovation Festival | Exalter Students</title>
+    <meta name="description" content="Program pelatihan riset dan inovasi + kompetisi internasional oleh Exalter Students. Bootcamp, International Competition, Medal, Awards, & Grand Prizes." />
+    <script is:inline>
+      {/* FOWT prevention */}
+      (function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();
+    </script>
+  </head>
+  <body>
+    <Navigation client:load currentPath="/irif" />
+    <main>
+      <IRIFLanding client:load />
+    </main>
+    <Footer client:load />
+  </body>
+</html>

@@ -661,6 +661,7 @@ export default function IRIFLanding() {
         <div className="w-full max-w-lg mx-auto text-center">
           <div className="fade-in">
             <h2 className="font-display text-2xl sm:text-3xl font-bold text-primary-foreground mb-4">REGISTER NOW!!</h2>
+            <img src="/images/irif-content/irif-instagram-post.png" alt="IRIF 2026" className="w-full max-w-md mx-auto rounded-2xl shadow-lg mb-6" />
             <Button asChild className="bg-cta text-cta-foreground hover:bg-cta/90 px-10 py-4 rounded-xl text-lg font-bold shadow-lg mb-8">
               <a href={REGISTER_URL} target="_blank" rel="noopener noreferrer">Daftar Sekarang</a>
             </Button>

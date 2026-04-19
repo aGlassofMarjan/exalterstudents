@@ -313,11 +313,11 @@ export default function IRIFLanding() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-foreground mb-3">{seg.title}</h3>
                   {seg.title === 'Project Idea Areas' ? (
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-2 gap-2 md:gap-3">
                       {(seg.items as { name: string; img: string }[]).map((item) => (
-                        <div key={item.name} className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted transition-colors">
-                          <img src={item.img} alt={item.name} className="w-10 h-10 rounded-full object-cover shrink-0" />
-                          <span className="text-muted-foreground text-sm">{item.name}</span>
+                        <div key={item.name} className="flex items-center gap-2 p-1.5 md:p-2 rounded-lg hover:bg-muted transition-colors">
+                          <img src={item.img} alt={item.name} className="w-8 h-8 md:w-10 md:h-10 rounded-full object-cover shrink-0" />
+                          <span className="text-muted-foreground text-xs md:text-sm">{item.name}</span>
                         </div>
                       ))}
                     </div>

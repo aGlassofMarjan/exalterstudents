@@ -700,11 +700,6 @@ export default function ProductLanding() {
         </div>
       </section>
 
-      {/* ═══ COPYRIGHT ═══ */}
-      <div className="w-full py-6 px-4 bg-text-dark text-center">
-        <p className="text-gray-400 text-sm">© 2025 Kumpulan Materi IELTS. All rights reserved.</p>
-      </div>
-
       {/* ScrollToTop */}
       <ScrollToTop />
     </div>

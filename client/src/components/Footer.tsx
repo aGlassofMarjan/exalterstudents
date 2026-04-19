@@ -73,7 +73,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="mt-10 pt-6 border-t border-border text-center text-sm text-muted-foreground">
-          © 2025 Exalter Students. All rights reserved.
+          © 2026 Exalter Students. All rights reserved.
         </div>
       </div>
     </footer>

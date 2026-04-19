@@ -9,6 +9,7 @@ import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from '@/components/ui/accordion';
 import ScrollToTop from './ScrollToTop';
+import MarqueeSection from './MarqueeSection';
 
 /* ─── Scroll Reveal ─── */
 function useFadeIn() {
@@ -117,21 +118,10 @@ export default function IRIFLanding() {
               </Card>
             ))}
           </div>
-          {/* Partnership & Media */}
-          {[
-            { title: 'Partnership', logos: ['brin','kumparan','creatella-impact','inventify','insfre','apec'] },
-            { title: 'Media Partners', logos: ['kompasiana','tribun-news','kabar-buana','glints','antara-news','suarabaru-id'] },
-          ].map((group) => (
-            <div key={group.title} className="fade-in mb-8">
-              <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider text-center mb-4">{group.title}</h3>
-              <div className="flex flex-wrap justify-center items-center gap-6">
-                {group.logos.map((l) => (
-                  <img key={l} src={`https://exalterstudents.vercel.app/images/marquee-partners/${l}.png`} alt={l} className="h-8 max-w-[80px] object-contain opacity-70" />
-                ))}
-              </div>
-              <p className="text-center text-muted-foreground text-xs mt-2">dan lainnya</p>
-            </div>
-          ))}
+          {/* Marquee — full width breakout */}
+        </div>
+        <div className="fade-in">
+          <MarqueeSection title="Dipercaya Oleh Lebih Dari 30+ Mitra dan Media" description="Kami dipercaya oleh lebih dari 30 mitra dan media terkemuka, yang menggarisbawahi kepercayaan dan kredibilitas kami dalam menyediakan solusi inovatif dan berkualitas." />
         </div>
       </section>
 
@@ -368,25 +358,39 @@ export default function IRIFLanding() {
       </section>
 
       {/* ═══ SECTION 8: MENTORS ═══ */}
-      <section className="w-full py-16 px-4 bg-card">
+      <section className="w-full py-16 px-4 bg-white text-[#1A1A1A]">
         <div className="w-full max-w-3xl mx-auto">
           <div className="fade-in text-center mb-8">
-            <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground mb-2">Our Beloved Mentors</h2>
-            <p className="text-muted-foreground">From renowned universities across the globe</p>
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-[#1A1A1A] mb-2">Our Beloved Mentors</h2>
+            <p className="text-[#5A5A5A]">From renowned universities across the globe</p>
           </div>
           <div className="fade-in mb-8">
-            <img src="https://dummyimage.com/1280x720/f0f0f0/999&text=Mentor+Team+Photo" alt="Mentors" className="w-full rounded-2xl shadow-lg" />
+            <img src="/images/irif-content/mentor-group.png" alt="Mentors" className="w-full rounded-2xl shadow-lg" />
           </div>
-          <div className="fade-in flex flex-wrap justify-center gap-2">
+          <div className="fade-in grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 items-center justify-items-center">
             {[
-              'University of Nebraska Lincoln', 'The University of Edinburgh', 'National University of Singapore',
-              'BRIN', 'University of Oxford', 'MIT', 'ITB', 'Universitas Kebangsaan Malaysia',
-              'Universitas Padjadjaran', 'University of Malaya', 'NTU Singapore', 'Inventify Center',
-              'The University of Melbourne', 'Universiti Teknologi Mara', 'Delft University of Technology',
-              'Monash University', 'Korea University', 'University of Canberra', 'University of Glasgow',
-              'Northern Illinois University', 'New York University',
+              { name: 'University of Nebraska Lincoln', file: 'University of Nebraska Lincoln.png' },
+              { name: 'The University of Edinburgh', file: 'The University of Edinburgh.png' },
+              { name: 'National University of Singapore', file: 'National University of Singapore.png' },
+              { name: 'University of Oxford', file: 'University_of_Oxford-Logo.png' },
+              { name: 'MIT', file: 'Massachusetts Institue of Technology.png' },
+              { name: 'ITB', file: 'Institute Teknologi Bandung.png' },
+              { name: 'Universitas Kebangsaan Malaysia', file: 'Universiti-kebangsaan-malaysia.webp' },
+              { name: 'Universitas Padjadjaran', file: 'logo-unpad1.webp' },
+              { name: 'University of Malaya', file: 'University_of_Malaya.png' },
+              { name: 'NTU Singapore', file: 'nanyang-technological-university.png' },
+              { name: 'Inventify Center', file: 'inventify-center.png' },
+              { name: 'The University of Melbourne', file: 'the-university-of-melbourne.png' },
+              { name: 'Universiti Teknologi Mara', file: 'Universiti Teknologi Mara.webp' },
+              { name: 'Delft University of Technology', file: 'Delft University of Technology.webp' },
+              { name: 'Monash University', file: 'monash-university.png' },
+              { name: 'Korea University', file: 'korea-university.png' },
+              { name: 'University of Canberra', file: 'university-of-canberra.png' },
+              { name: 'University of Glasgow', file: 'University-of-glasgow.png' },
+              { name: 'Northern Illinois University', file: 'Northern_Illinois_University.png' },
+              { name: 'New York University', file: 'New_York_University.png' },
             ].map((u) => (
-              <Badge key={u} variant="outline" className="text-xs text-muted-foreground border-primary/20">{u}</Badge>
+              <img key={u.name} src={`/images/irif-content/${u.file}`} alt={u.name} title={u.name} className="h-12 max-w-[100px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
             ))}
           </div>
         </div>
@@ -426,7 +430,7 @@ export default function IRIFLanding() {
                 <div className="grid grid-cols-2 gap-3">
                   {[1, 2, 3, 4].map((j) => (
                     <div key={j} className="text-center">
-                      <img src={`https://dummyimage.com/150x150/e0e0e0/999&text=Juri+${j}`} alt={`Juri ${j}`} className="w-16 h-16 rounded-full mx-auto mb-2 object-cover" />
+                      <div className="w-16 h-16 rounded-full mx-auto mb-2 bg-muted flex items-center justify-center text-muted-foreground text-xl">?</div>
                       <p className="text-xs text-muted-foreground font-medium">TO BE ANNOUNCED</p>
                     </div>
                   ))}
@@ -475,13 +479,14 @@ export default function IRIFLanding() {
           <div className="grid md:grid-cols-3 gap-4">
             <Card className="fade-in text-center">
               <CardContent className="p-5">
+                <img src="/images/irif-content/paper-zoom-meeting.png" alt="Zoom Meeting" className="w-full rounded-lg mb-3" />
                 <Badge className="bg-primary text-white mb-3">Hybrid</Badge>
                 <p className="text-muted-foreground text-sm">Online meeting via Zoom untuk awarding session</p>
               </CardContent>
             </Card>
             <Card className="fade-in">
               <CardContent className="p-5">
-                <img src="https://dummyimage.com/500x300/e0e0e0/999&text=Gala+Dinner" alt="Gala Dinner" className="w-full rounded-lg mb-3" />
+                <img src="/images/irif-content/onsite-paper-showdown.png" alt="Gala Dinner" className="w-full rounded-lg mb-3" />
                 <p className="text-muted-foreground text-sm">Peserta dengan predikat terbaik akan mendapatkan kesempatan hadir pada gala dinner/networking session di Exalter Gathering Community</p>
               </CardContent>
             </Card>
@@ -505,7 +510,6 @@ export default function IRIFLanding() {
           <Card className="fade-in mb-8 bg-gradient-to-r from-product-primary to-product-primary-dark text-white border-0">
             <CardContent className="p-6 text-center">
               <h3 className="font-display text-xl font-bold mb-2">Dapatkan Grand Prizes!</h3>
-              <img src="https://dummyimage.com/400x200/003D6B/fff&text=Grand+Prizes" alt="Grand Prizes" className="w-full max-w-sm mx-auto rounded-xl my-4" />
             </CardContent>
           </Card>
           <div className="fade-in mb-8">
@@ -513,15 +517,13 @@ export default function IRIFLanding() {
             <p className="text-muted-foreground text-sm text-center mb-6">Participants will be awarded medals based on their ranking</p>
             <div className="grid grid-cols-3 gap-3">
               {[
-                { title: 'Gold Medal', desc: 'Top 30% of total participants', color: 'from-yellow-400 to-yellow-600' },
-                { title: 'Silver Medal', desc: 'Mid 50% of total participants', color: 'from-gray-300 to-gray-500' },
-                { title: 'Bronze Medal', desc: 'Bottom 20% of total participants', color: 'from-orange-400 to-orange-700' },
+                { title: 'Gold Medal', desc: 'Top 30% of total participants', img: '/images/irif-content/gold-medal.png' },
+                { title: 'Silver Medal', desc: 'Mid 50% of total participants', img: '/images/irif-content/silver-medal.png' },
+                { title: 'Bronze Medal', desc: 'Bottom 20% of total participants', img: '/images/irif-content/bronze-medal.png' },
               ].map((medal) => (
                 <Card key={medal.title} className="text-center">
                   <CardContent className="p-4">
-                    <div className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-b ${medal.color} mb-3 flex items-center justify-center`}>
-                      <span className="text-white text-2xl">🏅</span>
-                    </div>
+                    <img src={medal.img} alt={medal.title} className="w-20 h-20 mx-auto mb-3 object-contain" />
                     <h4 className="font-semibold text-foreground text-sm">{medal.title}</h4>
                     <p className="text-muted-foreground text-xs mt-1">{medal.desc}</p>
                   </CardContent>
@@ -568,20 +570,18 @@ export default function IRIFLanding() {
           </div>
           <div className="grid md:grid-cols-2 gap-4">
             {[
-              { name: 'AdieAzzam', msg: 'Definisi kualitas melampaui harga. Selain kualitas, yang diincer itu koneksinya nanti after program. di Exalter Students, alhamdulillah koneksi orang2 yang ga pelit ilmu dan mudah diajak kolaborasi.' },
-              { name: 'Achintya Garg', msg: 'It was a really fun experience, really knowledgeable. Exalter Students event allowed me to take my idea globally with different countries and people.' },
-              { name: 'M. Nabil', msg: 'It has been such an exciting, challenging, and eye-opening experience. Not only give you short term benefits, but also long term where you can gain valuable network.' },
-              { name: 'Julianna Sebastian', msg: 'It honestly has been a great experience to be part of the Exalter Students event. We have learned so much and also from all the amazing teams and ideas.' },
-              { name: 'Salsabila', msg: 'From the moment we joined, we felt the event was a great platform where young people are truly listened to, to go beyond the classroom, to collab across disciplines.' },
-              { name: 'Ellisa Priastiningtyas', msg: 'As someone who did not have any expertise before, i think is such a life changing experience! Not only gaining deep understanding but also building a strong and positive community.' },
-              { name: 'Novita Sari', msg: 'Aku sangat bersyukur, Setelah join di Exalter Students dapet banyak ilmu dan pengalaman, aku juga jadi punya harapan untuk job hunting.' },
+              { name: 'AdieAzzam', img: '/images/irif-content/adieazzam.png', msg: 'Definisi kualitas melampaui harga. Selain kualitas, yang diincer itu koneksinya nanti after program. di Exalter Students, alhamdulillah koneksi orang2 yang ga pelit ilmu dan mudah diajak kolaborasi.' },
+              { name: 'Achintya Garg', img: '/images/irif-content/achyintia.png', msg: 'It was a really fun experience, really knowledgeable. Exalter Students event allowed me to take my idea globally with different countries and people.' },
+              { name: 'M. Nabil', img: '/images/irif-content/nabil.png', msg: 'It has been such an exciting, challenging, and eye-opening experience. Not only give you short term benefits, but also long term where you can gain valuable network.' },
+              { name: 'Julianna Sebastian', img: '/images/irif-content/juliana-sebastian.png', msg: 'It honestly has been a great experience to be part of the Exalter Students event. We have learned so much and also from all the amazing teams and ideas.' },
+              { name: 'Salsabila', img: '/images/irif-content/salsabila-arief.png', msg: 'From the moment we joined, we felt the event was a great platform where young people are truly listened to, to go beyond the classroom, to collab across disciplines.' },
+              { name: 'Ellisa Priastiningtyas', img: '/images/irif-content/elisa-priastiningtyas.png', msg: 'As someone who did not have any expertise before, i think is such a life changing experience! Not only gaining deep understanding but also building a strong and positive community.' },
+              { name: 'Novita Sari', img: '/images/irif-content/novita-sari.png', msg: 'Aku sangat bersyukur, Setelah join di Exalter Students dapet banyak ilmu dan pengalaman, aku juga jadi punya harapan untuk job hunting.' },
             ].map((t) => (
-              <Card key={t.name} className="fade-in bg-gradient-to-br from-white to-cream border-white shadow-sm">
+              <Card key={t.name} className="fade-in shadow-sm">
                 <CardContent className="p-5">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm">
-                      {t.name.charAt(0)}
-                    </div>
+                    <img src={t.img} alt={t.name} className="w-10 h-10 rounded-full object-cover" />
                     <span className="font-semibold text-foreground text-sm">{t.name}</span>
                   </div>
                   <p className="text-muted-foreground text-sm leading-relaxed italic">"{t.msg}"</p>

@@ -367,8 +367,15 @@ export default function IRIFLanding() {
             <CardContent className="p-5">
               <h4 className="font-semibold text-foreground mb-2">Materi, Mentoring, Final Presentation dilakukan secara online menggunakan:</h4>
               <div className="flex flex-wrap gap-2">
-                {['Zoom Meeting', 'Google Classroom', 'WhatsApp Group'].map((t) => (
-                  <Badge key={t} variant="secondary" className="bg-primary/10 text-primary">{t}</Badge>
+                {[
+                  { name: 'Zoom Meeting', logo: '/images/irif-content/zoom-meeting2.png' },
+                  { name: 'Google Classroom', logo: '/images/irif-content/google-classroom2.png' },
+                  { name: 'WhatsApp Group', logo: '/images/irif-content/logo-whatsapp2.png' },
+                ].map((t) => (
+                  <Badge key={t.name} variant="secondary" className="bg-primary/10 text-primary flex items-center gap-1.5 px-3 py-3.5">
+                    <img src={t.logo} alt={t.name} className="w-6.5 h-6.5 object-contain" />
+                    {t.name}
+                  </Badge>
                 ))}
               </div>
               <p className="text-muted-foreground text-sm mt-3">

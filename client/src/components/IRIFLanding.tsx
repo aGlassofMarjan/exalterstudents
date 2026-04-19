@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Mail, Instagram, Phone, Linkedin, FileText, Presentation, Trophy } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -83,9 +84,9 @@ export default function IRIFLanding() {
             </Button>
           </div>
           <div className="fade-in flex flex-wrap justify-center gap-4 text-primary-foreground/60 text-sm">
-            <a href="mailto:exalterstudents@gmail.com" className="hover:text-primary-foreground transition-colors">📧 exalterstudents@gmail.com</a>
-            <a href="https://instagram.com/exalter_students" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors">📸 @exalter_students</a>
-            <span>📞 +62 895 1950 1456</span>
+            <a href="mailto:exalterstudents@gmail.com" className="hover:text-primary-foreground transition-colors flex items-center gap-1"><Mail className="w-4 h-4" /> exalterstudents@gmail.com</a>
+            <a href="https://instagram.com/exalter_students" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors flex items-center gap-1"><Instagram className="w-4 h-4" /> @exalter_students</a>
+            <span className="flex items-center gap-1"><Phone className="w-4 h-4" /> +62 895 1950 1456</span>
           </div>
         </div>
       </section>
@@ -121,7 +122,7 @@ export default function IRIFLanding() {
           {/* Marquee — full width breakout */}
         </div>
         <div className="fade-in">
-          <MarqueeSection title="Dipercaya Oleh Lebih Dari 30+ Mitra dan Media" description="Kami dipercaya oleh lebih dari 30 mitra dan media terkemuka, yang menggarisbawahi kepercayaan dan kredibilitas kami dalam menyediakan solusi inovatif dan berkualitas." />
+          <MarqueeSection title="Dipercaya Oleh Lebih Dari 30+ Mitra dan Media" description="Kami dipercaya oleh lebih dari 30 mitra dan media terkemuka, yang menggaris bawahi kepercayaan dan kredibilitas kami dalam menyediakan solusi inovatif dan berkualitas." />
         </div>
       </section>
 
@@ -237,22 +238,38 @@ export default function IRIFLanding() {
                 'Seluruh kegiatan dan jadwal dapat berubah apabila terjadi force majeure.',
               ]},
               { title: 'Project Idea Areas', items: [
-                'Education & Empowerment', 'Science & Technology', 'Business & Entrepreneurship',
-                'Entertainment & Lifestyle', 'Environment & Sustainability', 'Health & Wellness',
-                'Aqua and Agriculture', 'Social, Culture, and Tourism',
+                { name: 'Education & Empowerment', img: '/images/irif-content/Education & Empowerment.png' },
+                { name: 'Science & Technology', img: '/images/irif-content/Science & Technology.png' },
+                { name: 'Business & Entrepreneurship', img: '/images/irif-content/Business & Entrepreneurship.png' },
+                { name: 'Entertainment & Lifestyle', img: '/images/irif-content/Entertainment & Lifestyle.png' },
+                { name: 'Environment & Sustainability', img: '/images/irif-content/Environment & Sustainability.png' },
+                { name: 'Health & Wellness', img: '/images/irif-content/Health & Wellness.png' },
+                { name: 'Aqua and Agriculture', img: '/images/irif-content/Aqua and Agriculture.png' },
+                { name: 'Social, Culture, and Tourism', img: '/images/irif-content/Social, Culture, and Tourism.png' },
               ]},
             ].map((seg) => (
               <Card key={seg.title} className="fade-in">
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-foreground mb-3">{seg.title}</h3>
-                  <ul className="space-y-2">
-                    {seg.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-muted-foreground text-sm">
-                        <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-primary mt-2" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {seg.title === 'Project Idea Areas' ? (
+                    <div className="grid grid-cols-2 gap-3">
+                      {(seg.items as { name: string; img: string }[]).map((item) => (
+                        <div key={item.name} className="flex items-center gap-3 p-2 rounded-lg hover:bg-muted transition-colors">
+                          <img src={item.img} alt={item.name} className="w-10 h-10 rounded-full object-cover shrink-0" />
+                          <span className="text-muted-foreground text-sm">{item.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <ul className="space-y-2">
+                      {(seg.items as string[]).map((item) => (
+                        <li key={item} className="flex items-start gap-2 text-muted-foreground text-sm">
+                          <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-primary mt-2" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </CardContent>
               </Card>
             ))}
@@ -407,14 +424,14 @@ export default function IRIFLanding() {
               <h3 className="font-display text-lg font-bold text-foreground mb-4">Dokumen yang diperlukan saat final</h3>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-foreground mb-2">📄 Paper Ilmiah</h4>
+                  <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2"><FileText className="w-4 h-4 text-primary" /> Paper Ilmiah</h4>
                   <ul className="space-y-1.5 text-muted-foreground text-sm">
                     <li>• Setiap peserta wajib mengumpulkan paper ilmiah dalam form esai setelah mendapatkan pelatihan dan mentoring.</li>
                     <li>• Template esai dapat diakses melalui: <a href="https://bit.ly/TemplateExalterStudents" target="_blank" rel="noopener noreferrer" className="text-primary underline">bit.ly/TemplateExalterStudents</a></li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-foreground mb-2">📊 Power Point</h4>
+                  <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2"><Presentation className="w-4 h-4 text-primary" /> Power Point</h4>
                   <ul className="space-y-1.5 text-muted-foreground text-sm">
                     <li>• Presentasi harus disampaikan dalam bahasa Inggris, beserta materi presentasi (dalam format PowerPoint).</li>
                     <li>• Setiap peserta memiliki waktu 7 menit untuk pemaparan dan 8 menit untuk umpan balik dari juri (total 15 menit).</li>
@@ -494,7 +511,16 @@ export default function IRIFLanding() {
               <CardContent className="p-5">
                 <Badge variant="secondary" className="bg-accent/10 text-accent mb-3">Offline Location</Badge>
                 <h4 className="font-semibold text-foreground text-sm mb-1">SM Tower &amp; Convention, Yogyakarta</h4>
-                <p className="text-muted-foreground text-xs leading-relaxed">Jl. KH. Ahmad Dahlan No.107, Notoprajan, Ngampilan, Kota Yogyakarta, DIY 55262</p>
+                <p className="text-muted-foreground text-xs leading-relaxed mb-3">Jl. KH. Ahmad Dahlan No.107, Notoprajan, Ngampilan, Kota Yogyakarta, DIY 55262</p>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.891234023662!2d110.357761!3d-7.8013385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a57f1f8859a9d%3A0x21ad7858ea028e19!2sSM%20TOWER%20MALIOBORO%20YOGYAKARTA!5e0!3m2!1sen!2sid!4v1776595910551!5m2!1sen!2sid"
+                  className="w-full h-40 rounded-lg"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="SM Tower Malioboro Yogyakarta"
+                />
               </CardContent>
             </Card>
           </div>
@@ -510,6 +536,8 @@ export default function IRIFLanding() {
           <Card className="fade-in mb-8 bg-gradient-to-r from-product-primary to-product-primary-dark text-white border-0">
             <CardContent className="p-6 text-center">
               <h3 className="font-display text-xl font-bold mb-2">Dapatkan Grand Prizes!</h3>
+              <p className="text-primary-foreground/80 text-sm mb-4">Uang Tunai, Laptop, Smartphone, dan Beasiswa sampai dengan Rp10 Juta++ di event offline Exalter Community</p>
+              <img src="/images/irif-content/grand-prize.png" alt="Grand Prizes" className="w-full max-w-sm mx-auto rounded-xl" />
             </CardContent>
           </Card>
           <div className="fade-in mb-8">
@@ -541,7 +569,7 @@ export default function IRIFLanding() {
                   'Smart Project Award', 'Best Pitch Deck Award', 'Best Reliability Award', 'Most Urgency Award',
                 ].map((award) => (
                   <div key={award} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <span className="text-accent">🏆</span>
+                    <Trophy className="w-4 h-4 text-accent shrink-0" />
                     <span>The Winner of {award}</span>
                   </div>
                 ))}
@@ -554,11 +582,19 @@ export default function IRIFLanding() {
       {/* ═══ SECTION 12: BONUS (placeholder) ═══ */}
       <section className="w-full py-16 px-4 bg-card">
         <div className="w-full max-w-3xl mx-auto">
-          <div className="fade-in text-center">
-            <Badge className="bg-accent text-white px-4 py-2 text-sm font-semibold mb-4">Coming Soon</Badge>
+          <div className="fade-in text-center mb-8">
+            <Badge className="bg-accent text-white px-4 py-2 text-sm font-semibold mb-4">Bonus Eksklusif</Badge>
             <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground">BONUS Produk Eksklusif !!!</h2>
-            <p className="text-muted-foreground mt-2">Detail akan segera diumumkan</p>
           </div>
+          <Card className="fade-in overflow-hidden">
+            <CardContent className="p-6">
+              <h3 className="font-display text-xl font-bold text-foreground text-center mb-4">100+ Template Karya Ilmiah Para Juara</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <img src="/images/irif-content/300-ide-exalter.png" alt="300+ Ide Exalter" className="w-full rounded-xl object-cover" />
+                <img src="/images/irif-content/laptop-product.png" alt="Laptop Product Preview" className="w-full rounded-xl object-cover" />
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
@@ -630,10 +666,10 @@ export default function IRIFLanding() {
             </Button>
             <p className="text-primary-foreground/70 text-sm mb-4">If you have any question, don't hesitate to contact us!</p>
             <div className="flex flex-wrap justify-center gap-4 text-primary-foreground/60 text-sm">
-              <a href="mailto:exalterstudents@gmail.com" className="hover:text-primary-foreground transition-colors flex items-center gap-1">📧 exalterstudents@gmail.com</a>
-              <a href="https://instagram.com/exalter_students" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors flex items-center gap-1">📸 @exalter_students</a>
-              <span className="flex items-center gap-1">📞 +62 895 1950 1456</span>
-              <a href="https://linkedin.com/company/exalter-students" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors flex items-center gap-1">💼 Exalter Students</a>
+              <a href="mailto:exalterstudents@gmail.com" className="hover:text-primary-foreground transition-colors flex items-center gap-1"><Mail className="w-4 h-4" /> exalterstudents@gmail.com</a>
+              <a href="https://instagram.com/exalter_students" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors flex items-center gap-1"><Instagram className="w-4 h-4" /> @exalter_students</a>
+              <span className="flex items-center gap-1"><Phone className="w-4 h-4" /> +62 895 1950 1456</span>
+              <a href="https://linkedin.com/company/exalter-students" target="_blank" rel="noopener noreferrer" className="hover:text-primary-foreground transition-colors flex items-center gap-1"><Linkedin className="w-4 h-4" /> Exalter Students</a>
             </div>
           </div>
         </div>

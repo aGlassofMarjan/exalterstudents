@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { Mail, Instagram, Phone, Linkedin, FileText, Presentation, Trophy } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { Mail, Instagram, Phone, Linkedin, FileText, Presentation, Trophy, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -36,6 +36,67 @@ const CheckIcon = ({ className = 'w-4 h-4' }: { className?: string }) => (
 
 const REGISTER_URL = 'https://bit.ly/IRIF_Registration';
 
+const assessors = [
+  { name: 'Lytvynenko Tanya', title: 'Project Managers of Inventify Center', img: 'Lytvynenko Tanya.png' },
+  { name: 'Natalie Duncan', title: 'Co-Founder and CEO of Bug Mars', img: 'Natalie Duncan.png' },
+  { name: 'Cherry Murillon', title: 'Founder and CEO of CAWIL.AI', img: 'Cherry Murillon.png' },
+  { name: 'Michael Sung', title: 'Director of PT. Shine Ever Tex Tbk', img: 'Michael Sung.png' },
+  { name: 'Mohammad A. Alsiddik', title: 'Project Manager & Consultant at Reverie Platform, USA', img: 'Mohammad A. Alsiddik.png' },
+  { name: 'Jamil Wyne', title: 'Co-Founder of Riffle Ventures & Contributor of FORBES', img: 'Jamil Wyne.png' },
+  { name: 'Norngainy Mohd T', title: 'PhD in Business, Senior Lecturer & Researcher at UKM & Universiti of Malaya', img: 'Norngainy Mohd T.png' },
+  { name: 'Jacquline Romorosa', title: 'Co-Founder and COO of QWIKWIRE', img: 'Jacquline Romorosa.png' },
+  { name: 'Solomon Achiek', title: 'MSc Pharmacology, Oxford University, United Kingdom', img: 'Solomon Achiek.png' },
+  { name: 'Mohammad Imlesh', title: 'Project Manager at GarmenChain', img: 'Mohammad Imlesh.png' },
+  { name: 'Ronald Justino', title: 'Head Business Operation, Glints Singapore', img: 'Ronald Justino.png' },
+  { name: 'Mar Velasco', title: 'MIT Sloan School of Management, Co-Founder and CEO of NetaCarbon', img: 'Mar Velasco.png' },
+];
+
+function AssessorCarousel() {
+  const [current, setCurrent] = useState(0);
+  const total = assessors.length;
+
+  useEffect(() => {
+    const id = setInterval(() => setCurrent((c) => (c + 1) % total), 4000);
+    return () => clearInterval(id);
+  }, [total]);
+
+  const prev = () => setCurrent((c) => (c - 1 + total) % total);
+  const next = () => setCurrent((c) => (c + 1) % total);
+  const a = assessors[current];
+
+  return (
+    <div className="relative">
+      <div className="flex flex-col items-center text-center py-2 h-[180px] justify-center">
+        <img
+          src={`/images/irif-content/${a.img}`}
+          alt={a.name}
+          className="w-20 h-20 rounded-full object-cover mb-3 border-2 border-primary/20"
+        />
+        <p className="font-semibold text-foreground text-sm">{a.name}</p>
+        <p className="text-muted-foreground text-xs mt-1 leading-snug max-w-[200px]">{a.title}</p>
+      </div>
+      <div className="flex items-center justify-between absolute inset-y-0 left-0 right-0 pointer-events-none">
+        <button onClick={prev} className="pointer-events-auto p-1 rounded-full bg-muted hover:bg-muted/80 transition-colors" aria-label="Previous assessor">
+          <ChevronLeft className="w-4 h-4 text-foreground" />
+        </button>
+        <button onClick={next} className="pointer-events-auto p-1 rounded-full bg-muted hover:bg-muted/80 transition-colors" aria-label="Next assessor">
+          <ChevronRight className="w-4 h-4 text-foreground" />
+        </button>
+      </div>
+      <div className="flex justify-center gap-1 mt-2">
+        {assessors.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={`w-1.5 h-1.5 rounded-full transition-all ${i === current ? 'w-4 bg-primary' : 'bg-muted-foreground/30'}`}
+            aria-label={`Go to assessor ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function IRIFLanding() {
   const containerRef = useFadeIn();
 
@@ -63,8 +124,8 @@ export default function IRIFLanding() {
           <div className="fade-in grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
             {[
               { qty: '4', desc: 'Online Course & 2x Mentoring' },
-              { qty: '4', desc: 'Online Course & 2x Mentoring' },
-              { qty: '100+', desc: 'Template Karya Ilmiah, Karya Para Juara' },
+              { qty: '3', desc: 'International Certification' },
+              { qty: '100+', desc: 'Contoh Karya Ilmiah Para Juara' },
               { qty: '100%', desc: 'Funded Trip Opportunity for Best Participant' },
             ].map((h, i) => (
               <Card key={i} className="bg-primary-foreground/10 border-primary-foreground/10 backdrop-blur-sm text-center">
@@ -227,7 +288,7 @@ export default function IRIFLanding() {
           <div className="space-y-6">
             {[
               { title: 'Persyaratan Umum Peserta', items: [
-                'Peserta mendaftar secara individu',
+                'Peserta bisa mendaftar secara individu atau team',
                 'Peserta merupakan pelajar (siswa/mahasiswa) dibuktikan dengan kartu pelajar/kartu tanda mahasiswa',
                 'Peserta wajib menyelesaikan proses pendaftaran dan menyerahkan semua dokumen yang dipersyaratkan sebelum batas waktu yang ditentukan.',
                 'Peserta wajib mengikuti seluruh sesi dan terlibat aktif dalam seluruh kegiatan dan tugas.',
@@ -393,12 +454,12 @@ export default function IRIFLanding() {
               { name: 'MIT', file: 'Massachusetts Institue of Technology.png' },
               { name: 'ITB', file: 'Institute Teknologi Bandung.png' },
               { name: 'Universitas Kebangsaan Malaysia', file: 'Universiti-kebangsaan-malaysia.webp' },
-              { name: 'Universitas Padjadjaran', file: 'logo-unpad1.webp' },
+              { name: 'Universitas Indonesia', file: 'Universitas-Indonesia.png' },
               { name: 'University of Malaya', file: 'University_of_Malaya.png' },
               { name: 'NTU Singapore', file: 'nanyang-technological-university.png' },
               { name: 'Inventify Center', file: 'inventify-center.png' },
               { name: 'The University of Melbourne', file: 'the-university-of-melbourne.png' },
-              { name: 'Universiti Teknologi Mara', file: 'Universiti Teknologi Mara.webp' },
+              { name: 'Universiti Teknologi Mara', file: 'Universiti Teknologi Mara.png' },
               { name: 'Delft University of Technology', file: 'Delft University of Technology.webp' },
               { name: 'Monash University', file: 'monash-university.png' },
               { name: 'Korea University', file: 'korea-university.png' },
@@ -443,15 +504,8 @@ export default function IRIFLanding() {
           <div className="grid md:grid-cols-2 gap-4">
             <Card className="fade-in">
               <CardContent className="p-5">
-                <h3 className="font-semibold text-foreground mb-3">Profil Juri Internasional</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {[1, 2, 3, 4].map((j) => (
-                    <div key={j} className="text-center">
-                      <div className="w-16 h-16 rounded-full mx-auto mb-2 bg-muted flex items-center justify-center text-muted-foreground text-xl">?</div>
-                      <p className="text-xs text-muted-foreground font-medium">TO BE ANNOUNCED</p>
-                    </div>
-                  ))}
-                </div>
+                <h3 className="font-semibold text-foreground mb-3">Our International Assesors</h3>
+                <AssessorCarousel />
               </CardContent>
             </Card>
             <Card className="fade-in">
@@ -588,7 +642,7 @@ export default function IRIFLanding() {
           </div>
           <Card className="fade-in overflow-hidden">
             <CardContent className="p-6">
-              <h3 className="font-display text-xl font-bold text-foreground text-center mb-4">100+ Template Karya Ilmiah Para Juara</h3>
+              <h3 className="font-display text-xl font-bold text-foreground text-center mb-4">100+ Contoh Karya Ilmiah Para Juara</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <img src="/images/irif-content/300-ide-exalter.png" alt="300+ Ide Exalter" className="w-full rounded-xl object-cover" />
                 <img src="/images/irif-content/laptop-product.png" alt="Laptop Product Preview" className="w-full rounded-xl object-cover" />

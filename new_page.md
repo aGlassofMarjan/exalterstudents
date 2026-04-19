@@ -275,7 +275,7 @@
             },
         },
         "jury_showdown_small_card_1": {
-            "title": "Profil Juri Internasional",
+            "title": "Our International Assesors",
             "jury_list": [
                 {
                     "name": "Juri 1",
@@ -468,5 +468,75 @@
             "linkedin": "Exalter Students", // put social media logo on front of each contact!
         }
     }
-}
+},
+```
+
+---
+
+```json
+// new International Assesors in exalter students
+"assesors": [
+    {
+        "name": "Lytvynenko Tanya",
+        "title": "Project Managers of Inventify Center",
+        "avatar_image": "Lytvynenko Tanya.png",
+    },
+    {
+        "name": "Natalie Duncan",
+        "title": "Co-Founder and CEO of Bug Mars",
+        "avatar_image": "Natalie Duncan.png",
+    },
+    {
+        "name": "Cherry Murillon",
+        "title": "Founder and CEO of CAWIL.AI",
+        "avatar_image": "Cherry Murillon.png"
+    },
+    {
+        "name": "Michael Sung",
+        "title": "Director of PT. Shine Ever Tex Tbk",
+        "avatar_image": "Michael Sung.png"
+    },
+    {
+        "name": "Mohammad A. Alsiddik",
+        "title": "Project Manager & Consultant at Reverie Platform, USA",
+        "avatar_image": "Mohammad A. Alsiddik.png"
+    },
+    {
+        "name": "Jamil Wyne",
+        "title": "Co-Founder of Riffle Ventures & Contributor of FORBES",
+        "avatar_image": "Jamil Wyne.png"
+    },
+    {
+        "name": "Norngainy Mohd T",
+        "title": "PhD in Business, Senior Lecturer & Researcher at UKM & Universiti of Malaya",
+        "avatar_image": "Norngainy Mohd T.png"
+    },
+    {
+        "name": "Jacquline Romorosa",
+        "title": "Co-Founder and COO of QWIKWIRE",
+        "avatar_image": "Jacquline Romorosa.png"
+    },
+    {
+        "name": "Solomon Achiek",
+        "title": "MSc Pharmacology, Oxford University, United Kingdom",
+        "avatar_image": "Solomon Achiek.png"
+    },
+    {
+        "name": "Mohammad Imlesh",
+        "title": "Project Manager at GarmenChain",
+        "avatar_image": "Mohammad Imlesh.png"
+    },
+    {
+        "name": "Ronald Justino",
+        "title": "Head Business Operation, Glints Singapore",
+        "avatar_image": "Ronald Justino.png"
+    },
+    {
+        "name": "Mar Velasco",
+        "title": "MIT Sloan School of Management, Co-Founder and CEO of NetaCarbon",
+        "avatar_image": "Mar Velasco.png"
+    }
+]
+    
+
 ```

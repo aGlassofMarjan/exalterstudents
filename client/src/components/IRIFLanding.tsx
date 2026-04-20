@@ -674,6 +674,7 @@ export default function IRIFLanding() {
               { name: 'Salsabila', img: '/images/irif-content/salsabila-arief.png', msg: 'From the moment we joined, we felt the event was a great platform where young people are truly listened to, to go beyond the classroom, to collab across disciplines.' },
               { name: 'Ellisa Priastiningtyas', img: '/images/irif-content/elisa-priastiningtyas.png', msg: 'As someone who did not have any expertise before, i think is such a life changing experience! Not only gaining deep understanding but also building a strong and positive community.' },
               { name: 'Novita Sari', img: '/images/irif-content/novita-sari.png', msg: 'Aku sangat bersyukur, Setelah join di Exalter Students dapet banyak ilmu dan pengalaman, aku juga jadi punya harapan untuk job hunting.' },
+              { name: 'Maulana Dzaki', img: '/images/irif-content/Maulana-Dzaki.png', msg: 'Bersyukur banget prestasi nya bisa saya gunakan untuk mendaftar kerja setelah kuliah, sekarang saya di terima di perusahaan minyak dan gas' }
             ].map((t) => (
               <Card key={t.name} className="fade-in shadow-sm">
                 <CardContent className="p-5">

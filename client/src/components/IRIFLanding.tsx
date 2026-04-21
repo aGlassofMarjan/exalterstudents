@@ -648,53 +648,56 @@ export default function IRIFLanding() {
             <h2 className="font-display text-2xl sm:text-3xl font-bold text-foreground">BONUS Produk Eksklusif !!!</h2>
           </div>
 
-          {/* Big hero image */}
-          <div className="fade-in mb-6">
-            <img src="/images/irif-content/300-ide-exalter.png" alt="300+ Ide Exalter" className="w-full rounded-2xl shadow-lg" />
-          </div>
+          <Card className="fade-in overflow-hidden">
+            <CardContent className="p-0">
+              <div className="grid md:grid-cols-3">
+                {/* Left 1/3 — big image */}
+                <div className="md:col-span-1 p-4 md:p-0">
+                  <img src="/images/irif-content/300-ide-exalter.png" alt="300+ Ide Exalter" className="w-full h-full object-cover min-h-[200px] rounded-xl md:rounded-none" />
+                </div>
 
-          {/* Card 1: 100+ Contoh Karya */}
-          <Card className="fade-in mb-4">
-            <CardContent className="p-6 flex flex-col sm:flex-row items-center gap-4">
-              <img src="/images/irif-content/laptop-vector.png" alt="Laptop" className="w-24 h-24 object-contain shrink-0" />
-              <div className="text-center sm:text-left">
-                <span className="text-3xl font-bold text-primary">100+</span>
-                <p className="text-muted-foreground text-sm mt-1">Contoh Karya Ilmiah Para Juara</p>
-              </div>
-            </CardContent>
-          </Card>
+                {/* Right 2/3 — marketing content */}
+                <div className="md:col-span-2 p-5 space-y-4">
+                  {/* 100+ row */}
+                  <div className="flex items-center gap-3 mb-3">
+                    <img src="/images/irif-content/laptop-vector.png" alt="Laptop" className="w-14 h-14 object-contain shrink-0" />
+                    <div>
+                      <span className="text-2xl font-bold text-primary">100+</span>
+                      <p className="text-muted-foreground text-xs">Contoh Karya Ilmiah Para Juara</p>
+                    </div>
+                  </div>
 
-          {/* Card 2: Laptop product + stars + paper examples */}
-          <Card className="fade-in mb-4">
-            <CardContent className="p-6">
-              <div className="flex justify-center gap-1 mb-3">
-                {[1,2,3,4,5].map((i) => (
-                  <img key={i} src="/images/irif-content/star.png" alt="star" className="w-5 h-5" />
-                ))}
-              </div>
-              <p className="text-muted-foreground text-sm text-center mb-4">
-                Solusi terbaik buat kamu yang bingung cara membuat esai dan meraih juara kompetisi karya ilmiah
-              </p>
-              <img src="/images/irif-content/laptop-product.png" alt="Laptop Product" className="w-full max-w-sm mx-auto rounded-xl mb-4" />
-              <div className="flex justify-center gap-3">
-                {['paper_1', 'paper_2', 'paper_3'].map((p) => (
-                  <img key={p} src={`/images/irif-content/${p}.png`} alt={p} className="w-20 h-28 object-cover rounded-lg shadow-sm border border-border" />
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+                  {/* Stars + message + papers */}
+                  <div>
+                    <div className="flex gap-0.5 mb-1">
+                      {[1,2,3,4,5].map((i) => (
+                        <img key={i} src="/images/irif-content/star.png" alt="star" className="w-4 h-4" />
+                      ))}
+                    </div>
+                    <p className="text-muted-foreground text-s mb-3 mt-2">Solusi terbaik buat kamu yang bingung cara membuat esai dan meraih juara kompetisi karya ilmiah</p>
+                    <div className="flex items-end gap-3">
+                      <img src="/images/irif-content/laptop-product.png" alt="Laptop Product" className="w-32 rounded-lg shrink-0" />
+                      <div className="flex gap-1.5">
+                        {['paper_1','paper_2','paper_3'].map((p) => (
+                          <img key={p} src={`/images/irif-content/${p}.png`} alt={p} className="w-12 h-16 object-cover rounded border border-border" />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
 
-          {/* Card 3: File formats */}
-          <Card className="fade-in">
-            <CardContent className="p-6">
-              <img src="/images/irif-content/computer-stuff.png" alt="Computer Stuff" className="w-full max-w-xs mx-auto rounded-xl mb-4" />
-              <p className="text-muted-foreground text-sm text-center mb-3">
-                File dalam bentuk paper, PPT, Template, hingga Prototype Design
-              </p>
-              <div className="flex justify-center gap-4">
-                {['word-logo', 'powerpoint-logo', 'excel-logo'].map((logo) => (
-                  <img key={logo} src={`/images/irif-content/${logo}.png`} alt={logo} className="w-10 h-10 object-contain" />
-                ))}
+                  {/* File formats */}
+                  <div className="flex items-center gap-3 pt-6">
+                    <img src="/images/irif-content/computer-stuff.png" alt="Computer Stuff" className="w-20 rounded-lg shrink-0" />
+                    <div>
+                      <p className="text-muted-foreground text-xs mb-1.5">File dalam bentuk paper, PPT, Template, hingga Prototype Design</p>
+                      <div className="flex gap-2">
+                        {['word-logo','powerpoint-logo','excel-logo'].map((logo) => (
+                          <img key={logo} src={`/images/irif-content/${logo}.png`} alt={logo} className="w-6 h-6 object-contain" />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>

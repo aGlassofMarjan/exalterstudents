@@ -378,7 +378,29 @@
     },
     "segment_10": {
         "title": "BONUS Produk Ekslusif !!!",
-        // to be continued
+        "content": {
+            "big_image": "/300-ide-exalter.png",
+            "marketing_message": [
+                {
+                    "vector_image": "laptop-vector.png",
+                    "number": "100+",
+                    "message": "Contoh Karya Ilmiah Para Juara",
+                },
+                {
+                    "medium_image": "laptop-product.png",
+                    {
+                        "star_image": ["/star.png", "/star.png", "/star.png", "/star.png", "/star.png"],
+                        "message": "Solusi terbaik buat kamu yang bingung cara membuat esai dan meraih juara kompetisi karya ilmiah",
+                        "paper_image_example": ["paper_1", "paper_2", "paper_3"]
+                    },
+                },
+                {
+                    "image": "computer-stuff",
+                    "message": "File dalam bentuk paper, PPT, Template, hingga Prototype Design",
+                    "small_logo_represent_paper_format": ["word-logo.png", "powerpoint-logo.png", "excel-logo.png"]
+                }
+            ]
+        }
     },
     "segment_11": {
         "title": "Testimoni Exalter Students",
@@ -539,4 +561,10 @@
 ]
     
 
+```
+
+```json
+{
+
+}
 ```

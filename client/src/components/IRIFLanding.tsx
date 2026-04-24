@@ -557,14 +557,14 @@ export default function IRIFLanding() {
           <div className="grid md:grid-cols-3 gap-4">
             <Card className="fade-in text-center">
               <CardContent className="p-5">
-                <img src="/images/irif-content/paper-zoom-meeting.png" alt="Zoom Meeting" className="w-full rounded-lg mb-3" />
+                <img src="/images/achievement-3-2560x2050.png" alt="Zoom Meeting" className="w-full rounded-lg mb-3" />
                 <Badge className="bg-primary text-white mb-3">Hybrid</Badge>
-                <p className="text-muted-foreground text-sm">Online meeting via Zoom untuk awarding session</p>
+                <p className="text-muted-foreground text-sm">Online via zoom meeting, dan offline di Yogyakarta/Bali</p>
               </CardContent>
             </Card>
             <Card className="fade-in">
               <CardContent className="p-5">
-                <img src="/images/irif-content/onsite-paper-showdown.png" alt="Gala Dinner" className="w-full rounded-lg mb-3" />
+                <img src="/images/irif-content/achievement-5.jpeg" alt="Gala Dinner" className="w-full rounded-lg mb-3" />
                 <p className="text-muted-foreground text-sm">Peserta dengan predikat terbaik akan mendapatkan kesempatan hadir pada gala dinner/networking session di Exalter Gathering Community</p>
               </CardContent>
             </Card>

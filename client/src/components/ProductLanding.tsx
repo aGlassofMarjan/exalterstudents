@@ -278,7 +278,7 @@ export default function ProductLanding() {
       </section>
 
       {/* ═══ SOCIAL PROOF SLIDER ═══ */}
-      <section className="w-full py-12 px-4 bg-white">
+      {/* <section className="w-full py-12 px-4 bg-white">
         <div className="w-full max-w-lg mx-auto">
           <div className="fade-in text-center mb-8">
             <h2 className="font-display text-2xl sm:text-3xl font-bold text-text-dark mb-4">
@@ -322,7 +322,7 @@ export default function ProductLanding() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ═══ TESTIMONIALS ═══ */}
       <section className="w-full py-12 px-4 bg-warm-gray">

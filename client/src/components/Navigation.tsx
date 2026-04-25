@@ -8,7 +8,7 @@ interface NavigationProps {
 }
 
 const WA_LINK =
-  'https://api.whatsapp.com/send/?phone=6285214960974&text=Halo%2C+saya+tertarik+dengan+program+yang+tersedia+di+Exalter+Students%21&type=phone_number&app_absent=0'
+  'https://api.whatsapp.com/send/?phone=6289519501456&text=Halo%2C+saya+tertarik+dengan+program+yang+tersedia+di+Exalter+Students%21&type=phone_number&app_absent=0'
 
 const WaIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

@@ -12,8 +12,8 @@ import '../styles/global.css';
     <meta name="description" content="Kumpulan lengkap soal latihan, prediksi, dan materi IELTS untuk persiapan Study Abroad, Beasiswa, atau Migrasi." />
     <link rel="icon" type="image/png" href="/logo-1.png" />
     <script is:inline>
-      {/* FOWT prevention */}
-      (function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})();
+      {/* Force light theme — remove dark class if present */}
+      (function(){document.documentElement.classList.remove('dark')})();
     </script>
   </head>
   <body>

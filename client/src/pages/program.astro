@@ -3,6 +3,7 @@ import content from '../lib/content-loader';
 import Navigation from '../components/Navigation';
 import ServiceFullSection from '../components/ServiceFullSection';
 import MetricsSection from '../components/MetricsSection';
+import ProductCardsSection from '../components/ProductCardsSection';
 import Footer from '../components/Footer';
 import ScrollToTop from '../components/ScrollToTop';
 import '../styles/global.css';
@@ -55,6 +56,7 @@ import '../styles/global.css';
         cards={content.serviceFull.cards}
       />
       <MetricsSection client:load metrics={content.metrics} />
+      <ProductCardsSection client:load />
     </main>
     <Footer client:load />
     <ScrollToTop client:load />

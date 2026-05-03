@@ -151,14 +151,11 @@ export default function KaryaJuaraLanding() {
               { icon: Gift, text: 'BONUS: 500+ Ide Judul buat kamu yang buntu!' },
             ].map((item) => (
               <Card key={item.text} className="fade-in">
-                <CardContent className="p-4 flex items-start gap-3">
+                <CardContent className="p-4 flex items-center gap-3">
                   <div className="shrink-0 w-10 h-10 bg-product-primary/10 rounded-full flex items-center justify-center">
                     <item.icon className="w-5 h-5 text-product-primary" />
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
-                    <p className="text-text-dark text-sm font-medium">{item.text}</p>
-                  </div>
+                  <p className="text-text-dark text-sm font-medium">{item.text}</p>
                 </CardContent>
               </Card>
             ))}

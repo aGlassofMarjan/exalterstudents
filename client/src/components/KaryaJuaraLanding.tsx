@@ -70,7 +70,7 @@ export default function KaryaJuaraLanding() {
           <div className="fade-in relative mb-6">
             <div className="absolute inset-0 bg-product-primary/20 rounded-2xl blur-xl scale-95" />
             <img
-              src="/images/karya-juara.webp"
+              src="https://ik.imagekit.io/kdedpftqp/karya-juara.webp"
               alt="Karya Juara Product"
               className="relative w-full rounded-2xl shadow-xl float-animation"
             />

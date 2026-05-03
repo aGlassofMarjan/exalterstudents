@@ -7,8 +7,8 @@ interface MetricsSectionProps {
 }
 
 const achievementImages = [
-  '/images/achievement-400x524.png',
-  '/images/achievement-2-400x581.png',
+  'https://ik.imagekit.io/kdedpftqp/achievement-400x524.png',
+  'https://ik.imagekit.io/kdedpftqp/achievement-2-400x581.png',
 ];
 
 export default function MetricsSection({ metrics }: MetricsSectionProps) {

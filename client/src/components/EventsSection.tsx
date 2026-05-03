@@ -12,7 +12,7 @@ export default function EventsSection({ events }: EventsSectionProps) {
         {/* Header */}
         <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
           <img
-            src="/images/event-1-295x319.png"
+            src="https://ik.imagekit.io/kdedpftqp/event-1-295x319.png"
             alt="Exalter Students events"
             width={295}
             height={319}

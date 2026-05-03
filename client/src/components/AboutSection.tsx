@@ -30,7 +30,7 @@ export default function AboutSection({ about }: AboutSectionProps) {
           {/* Image tile — tall vertical block spanning title + value card rows */}
           <Card className="md:col-span-1 lg:col-span-2 lg:row-span-3 overflow-hidden p-0">
             <img
-              src="/images/achievement-3-2560x2050.png"
+              src="https://ik.imagekit.io/kdedpftqp/achievement-3-2560x2050.png"
               alt="Exalter Students community"
               className="w-full h-full min-h-[240px] object-cover"
             />

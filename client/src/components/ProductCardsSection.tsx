@@ -17,6 +17,13 @@ const products = [
     href: '/irif',
     badge: 'IRIF',
   },
+  {
+    title: '100+ Contoh Esai, Karya Ilmiah, & Business Plan',
+    desc: 'Koleksi eksklusif contoh karya para juara tingkat nasional hingga internasional. File asli + Video Course + 500+ Ide Judul.',
+    img: 'https://ik.imagekit.io/kdedpftqp/karya-juara.webp',
+    href: '/karya-juara',
+    badge: 'Karya Juara',
+  },
 ];
 
 export default function ProductCardsSection() {
@@ -27,9 +34,9 @@ export default function ProductCardsSection() {
           <h2 className="text-3xl font-bold text-foreground mb-3">Produk Kami</h2>
           <p className="text-muted-foreground text-lg">Program dan materi eksklusif dari Exalter Students</p>
         </div>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {products.map((p) => (
-            <Card key={p.badge} className="overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-lg transition-all">
+            <Card key={p.badge} className="overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-lg transition-all p-0">
               <div className="relative">
                 <img src={p.img} alt={p.title} className="w-full h-[220px] object-cover" />
                 <Badge className="absolute top-3 right-3 bg-primary text-primary-foreground shadow-sm">

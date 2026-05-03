@@ -10,16 +10,16 @@ interface HeroSectionProps {
  * Column B: wider / landscape-ish images + square-ish
  */
 const colA = [
-  { src: '/images/achievement-400x524.png', alt: 'Achievement' },
-  { src: '/images/achievement-2-400x581.png', alt: 'Achievement 2' },
-  { src: '/images/event-1-295x319.png', alt: 'Event' },
-  { src: '/images/hero-2-image-505x445.png', alt: 'Platform' },
+  { src: 'https://ik.imagekit.io/kdedpftqp/achievement-400x524.png', alt: 'Achievement' },
+  { src: 'https://ik.imagekit.io/kdedpftqp/achievement-2-400x581.png', alt: 'Achievement 2' },
+  { src: 'https://ik.imagekit.io/kdedpftqp/event-1-295x319.png', alt: 'Event' },
+  { src: 'https://ik.imagekit.io/kdedpftqp/hero-2-image-505x445.png', alt: 'Platform' },
 ];
 
 const colB = [
-  { src: '/images/hero-1-image-820x283.png', alt: 'Community' },
-  { src: '/images/achievement-3-2560x2050.png', alt: 'Achievement 3' },
-  { src: '/images/achievement-4-1920x1024.jpg', alt: 'Achievement 4' },
+  { src: 'https://ik.imagekit.io/kdedpftqp/hero-1-image-820x283.png', alt: 'Community' },
+  { src: 'https://ik.imagekit.io/kdedpftqp/achievement-3-2560x2050.png', alt: 'Achievement 3' },
+  { src: 'https://ik.imagekit.io/kdedpftqp/achievement-4-1920x1024.jpg', alt: 'Achievement 4' },
 ];
 
 // Duplicate for seamless loop
@@ -42,9 +42,9 @@ export default function HeroSection({ title, subtitle }: HeroSectionProps) {
           <div className="mt-8 flex items-center gap-3">
             <div className="flex -space-x-3">
               {[
-                '/images/testimony-andi-wijaya.png',
-                '/images/testimony-lilis-kusuma.png',
-                '/images/testimony-rina-sari.png',
+                'https://ik.imagekit.io/kdedpftqp/testimony-andi-wijaya.png',
+                'https://ik.imagekit.io/kdedpftqp/testimony-lilis-kusuma.png',
+                'https://ik.imagekit.io/kdedpftqp/testimony-rina-sari.png',
               ].map((src, i) => (
                 <img
                   key={i}

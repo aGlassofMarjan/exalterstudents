@@ -160,7 +160,7 @@ export default function IRIFLanding() {
             <p className="text-muted-foreground text-lg">Platform pembelajar untuk berkarya, berprestasi, dan meraih beasiswa</p>
           </div>
           <div className="fade-in mb-8">
-            <img src="https://exalterstudents.vercel.app/images/hero-1-image-820x283.png" alt="Exalter Students" className="w-full rounded-2xl shadow-lg" />
+            <img src="https://ik.imagekit.io/kdedpftqp/hero-1-image-820x283.png" alt="Exalter Students" className="w-full rounded-2xl shadow-lg" />
           </div>
           <p className="fade-in text-muted-foreground leading-relaxed text-center mb-10">
             Exalter Students telah memberdayakan ribuan siswa/mahasiswa guna mencapai potensi karya inovatif mereka. Kami menawarkan solusi pelatihan dan pengembangan inovasi secara komprehensif yang dirancang untuk meningkatkan keterampilan mereka, sehingga dapat berprestasi di kancah nasional &amp; internasional.
@@ -450,7 +450,7 @@ export default function IRIFLanding() {
             <p className="text-[#5A5A5A]">From renowned universities across the globe</p>
           </div>
           <div className="fade-in mb-8">
-            <img src="/images/irif-content/mentor-group.png" alt="Mentors" className="w-full rounded-2xl shadow-lg" />
+            <img src="https://ik.imagekit.io/kdedpftqp/mentor-group.png" alt="Mentors" className="w-full rounded-2xl shadow-lg" />
           </div>
           <div className="fade-in grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 items-center justify-items-center">
             {[
@@ -557,7 +557,7 @@ export default function IRIFLanding() {
           <div className="grid md:grid-cols-3 gap-4">
             <Card className="fade-in text-center">
               <CardContent className="p-5">
-                <img src="/images/achievement-3-2560x2050.png" alt="Zoom Meeting" className="w-full rounded-lg mb-3" />
+                <img src="https://ik.imagekit.io/kdedpftqp/achievement-3-2560x2050.png" alt="Zoom Meeting" className="w-full rounded-lg mb-3" />
                 <Badge className="bg-primary text-white mb-3">Hybrid</Badge>
                 <p className="text-muted-foreground text-sm">Online via zoom meeting, dan offline di Yogyakarta/Bali</p>
               </CardContent>

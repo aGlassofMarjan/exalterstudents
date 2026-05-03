@@ -6,9 +6,9 @@ interface TestimonialSectionProps {
 }
 
 const portraits: Record<string, string> = {
-  'Rina Sari': '/images/testimony-rina-sari.png',
-  'Andi Wijaya': '/images/testimony-andi-wijaya.png',
-  'Lilis Kusuma': '/images/testimony-lilis-kusuma.png',
+  'Rina Sari': 'https://ik.imagekit.io/kdedpftqp/testimony-rina-sari.png',
+  'Andi Wijaya': 'https://ik.imagekit.io/kdedpftqp/testimony-andi-wijaya.png',
+  'Lilis Kusuma': 'https://ik.imagekit.io/kdedpftqp/testimony-lilis-kusuma.png',
 };
 
 export default function TestimonialSection({ testimonials }: TestimonialSectionProps) {

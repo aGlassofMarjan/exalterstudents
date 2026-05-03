@@ -119,7 +119,7 @@ export default function ProductLanding() {
           <div className="fade-in relative mb-8">
             <div className="absolute inset-0 bg-product-primary/20 rounded-2xl blur-xl scale-95" />
             <img
-              src="https://cdn.scalev.id/uploads/1772550301/FxReNOoWqTpyslo2Zz0dbQ/1772550301253-Display-Produk.webp"
+              src="https://ik.imagekit.io/kdedpftqp/1772550301253-Display-Produk.webp"
               alt="Paket Materi IELTS Lengkap"
               className="relative w-full rounded-2xl shadow-xl float-animation"
             />
@@ -230,7 +230,7 @@ export default function ProductLanding() {
             <div className="relative inline-block">
               <div className="absolute inset-0 bg-product-primary/10 rounded-2xl blur-2xl scale-105" />
               <img
-                src="https://cdn.scalev.id/uploads/1772550317/tuEgztr72zWCnEdEYFSP0Q/1772550317533-Frame-10.webp"
+                src="https://ik.imagekit.io/kdedpftqp/1772550317533-Frame-10.webp"
                 alt="Konten Paket IELTS"
                 className="relative w-full max-w-md rounded-2xl shadow-2xl mx-auto"
               />
@@ -255,10 +255,10 @@ export default function ProductLanding() {
           </div>
           <div className="space-y-4 mb-8">
             {[
-              { img: 'https://cdn.scalev.id/uploads/1772551185/4nzneRlbrldI8o6NSsTQtQ/1772551184374-Cambridge-Series-(1).webp', badge: 'Books 1-21', title: 'Cambridge IELTS Series 1-21', desc: 'Kumpulan buku resmi latihan soal IELTS dari Cambridge. Wajib punya untuk semua peserta IELTS.' },
-              { img: 'https://cdn.scalev.id/uploads/1772315622/OwXMNQ4ogCNwgKsoL1v6eQ/1772315622664-image-1-(5).webp', badge: 'Audio MP3', title: 'Audio Listening & Scripts', desc: 'File audio lengkap untuk latihan listening beserta transkrip soal untuk belajar efektif.' },
-              { img: 'https://cdn.scalev.id/uploads/1772551756/XrK0-Fr5dDd1YD5yxQoNcA/1772551756655-Cambridge-Series-(2).webp', badge: 'Band 9 Samples', title: 'Contoh Writing Band 6.5 - 9.0', desc: 'Ratusan contoh jawaban Task 1 & Task 2 dengan skor tinggi untuk panduan penulisanmu.' },
-              { img: 'https://cdn.scalev.id/uploads/1772550350/ghEoFDVAO6hRctN83sahJw/1772550350656-Prediction-Test.webp', badge: 'Update 2026', title: 'Prediksi Soal & Tips Trik', desc: 'Kumpulan prediksi soal terbaru dan strategi mengerjakan soal IELTS secara efisien.' },
+              { img: 'https://ik.imagekit.io/kdedpftqp/1772551184374-Cambridge-Series-(1).webp', badge: 'Books 1-21', title: 'Cambridge IELTS Series 1-21', desc: 'Kumpulan buku resmi latihan soal IELTS dari Cambridge. Wajib punya untuk semua peserta IELTS.' },
+              { img: 'https://ik.imagekit.io/kdedpftqp/1772315622664-image-1-(5).webp', badge: 'Audio MP3', title: 'Audio Listening & Scripts', desc: 'File audio lengkap untuk latihan listening beserta transkrip soal untuk belajar efektif.' },
+              { img: 'https://ik.imagekit.io/kdedpftqp/1772551756655-Cambridge-Series-(2).webp', badge: 'Band 9 Samples', title: 'Contoh Writing Band 6.5 - 9.0', desc: 'Ratusan contoh jawaban Task 1 & Task 2 dengan skor tinggi untuk panduan penulisanmu.' },
+              { img: 'https://ik.imagekit.io/kdedpftqp/1772550350656-Prediction-Test.webp', badge: 'Update 2026', title: 'Prediksi Soal & Tips Trik', desc: 'Kumpulan prediksi soal terbaru dan strategi mengerjakan soal IELTS secara efisien.' },
             ].map((item) => (
               <Card key={item.title} className="fade-in overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-lg transition-all">
                 <div className="relative">
@@ -334,13 +334,13 @@ export default function ProductLanding() {
           <div className="space-y-4">
             {[
               {
-                img: 'https://cdn.scalev.id/uploads/1772553905/qqiwZl8XkqbRo0S7eyoSBA/1772553904890-Testi-IELTS-3.webp',
+                img: 'https://ik.imagekit.io/kdedpftqp/1772553904890-Testi-IELTS-3.webp',
                 name: 'Sarah Putri', role: 'Mahasiswi S2 Imperial College London',
                 badge: 'Penerima LPDP', badgeColor: 'bg-yellow-100 text-yellow-700',
                 text: '"Berkat latihan soal dari paket ini, saya berhasil naik skor dari 6.0 ke 7.5 dalam 2 bulan! Materinya sangat mirip dengan soal asli ujian. Sekarang saya sudah mulai kuliah S2 dan semua proses seleksi terasa jauh lebih siap."',
               },
               {
-                img: 'https://cdn.scalev.id/uploads/1772553913/4iX_Mnqx4yXVeQZoxtTBOw/1772553913366-Testi-IELTS-4.webp',
+                img: 'https://ik.imagekit.io/kdedpftqp/1772553913366-Testi-IELTS-4.webp',
                 name: 'Rizky Mahendra', role: 'Joint Master Student Sorbonne University',
                 badge: 'Awardee Erasmus Mundus', badgeColor: 'bg-blue-100 text-blue-700',
                 text: '"Saya perlu skor IELTS tinggi untuk program multi-country di Eropa. Latihan dari ebook ini sangat membantu memahami pola soal dan manajemen waktu. Hasilnya saya lolos seleksi dan sekarang kuliah lintas negara."',

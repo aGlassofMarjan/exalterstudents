@@ -200,7 +200,7 @@ export default function KaryaJuaraLanding() {
       {/* ═══ PRICING CTA ═══ */}
       <section className="w-full py-12 px-4 bg-cream pattern-bg">
         <div className="w-full max-w-lg mx-auto">
-          <Card className="fade-in overflow-hidden border-2 border-product-primary/20 shadow-xl">
+          <Card className="fade-in overflow-hidden border-2 border-product-primary/20 shadow-xl p-0">
             <div className="bg-gradient-to-r from-product-primary to-product-primary-dark p-6 text-center text-white">
               <Badge className="bg-white/20 text-white border-white/20 mb-2">Promo Terbatas !!</Badge>
               <h3 className="font-display text-xl font-bold">Karya Juara — Toolkit Lengkap</h3>

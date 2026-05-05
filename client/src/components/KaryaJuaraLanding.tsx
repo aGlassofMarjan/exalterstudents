@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -20,6 +20,24 @@ function useFadeIn() {
   return ref;
 }
 
+function useCountdown() {
+  const [time, setTime] = useState({ h: 3, m: 0, s: 0 });
+  useEffect(() => {
+    const id = setInterval(() => {
+      setTime((t) => {
+        let { h, m, s } = t;
+        if (s > 0) s--;
+        else if (m > 0) { m--; s = 59; }
+        else if (h > 0) { h--; m = 59; s = 59; }
+        else { h = 3; m = 0; s = 0; }
+        return { h, m, s };
+      });
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+  return time;
+}
+
 const CHECKOUT_URL = 'https://lynk.id/exalterstudents/exv3q088kd81';
 
 const categories = [
@@ -37,6 +55,8 @@ const categories = [
 
 export default function KaryaJuaraLanding() {
   const containerRef = useFadeIn();
+  const countdown = useCountdown();
+  const pad = (n: number) => String(n).padStart(2, '0');
 
   return (
     <div ref={containerRef} className="font-body bg-cream text-text-dark">
@@ -54,7 +74,7 @@ export default function KaryaJuaraLanding() {
               100+ Contoh Esai, Karya Ilmiah, &amp; Business Plan untuk Lomba
             </h1>
             <div className="flex items-center justify-center gap-2 mb-2">
-              <span className="text-product-primary font-bold text-2xl">IDR 249,000</span>
+              <span className="text-product-primary font-bold text-2xl">IDR 149,000</span>
               <span className="price-strike text-text-muted-warm text-lg">IDR 1,449,000</span>
             </div>
             <div className="flex items-center justify-center gap-1.5">
@@ -75,13 +95,13 @@ export default function KaryaJuaraLanding() {
               className="relative w-full rounded-2xl shadow-xl float-animation"
             />
             <Badge className="absolute -top-3 -right-3 bg-product-accent text-white px-4 py-2 text-sm font-bold shadow-lg">
-              Hemat 83%
+              Hemat 90%
             </Badge>
           </div>
 
           <div className="fade-in text-center mb-6">
             <Button asChild className="btn-product w-full py-4 rounded-xl text-lg font-bold shadow-lg">
-              <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">Beli Sekarang — Rp 249.000</a>
+              <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">Beli Sekarang — Rp 149.000</a>
             </Button>
             <p className="text-text-muted-warm text-xs mt-3">
               *Setelah payment silahkan cek e-mail untuk dapat akses link WA lalu klaim panduan dan bonus lain-nya!
@@ -200,6 +220,34 @@ export default function KaryaJuaraLanding() {
       {/* ═══ PRICING CTA ═══ */}
       <section className="w-full py-12 px-4 bg-cream pattern-bg">
         <div className="w-full max-w-lg mx-auto">
+          {/* Countdown */}
+          <div className="fade-in text-center mb-6">
+            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2D2D2D] rounded-2xl p-6 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              <Badge className="bg-gradient-to-r from-product-primary to-product-primary-light text-white text-xs font-semibold tracking-wide uppercase mb-4">
+                Penawaran Berakhir Dalam
+              </Badge>
+              <div className="flex items-center justify-center gap-2 sm:gap-3">
+                {[
+                  { val: pad(countdown.h), unit: 'Jam' },
+                  { val: pad(countdown.m), unit: 'Menit' },
+                  { val: pad(countdown.s), unit: 'Detik' },
+                ].map((box, i) => (
+                  <div key={box.unit} className="flex items-center gap-2 sm:gap-3">
+                    {i > 0 && <span className="text-product-primary text-3xl font-bold" style={{ animation: 'pulse-separator 1s ease-in-out infinite' }}>:</span>}
+                    <div className="bg-gradient-to-b from-[#0D0D0D] to-[#1A1A1A] border border-white/[0.08] rounded-xl px-3 py-4 min-w-[65px] sm:min-w-[80px] text-center shadow-lg">
+                      <div className="text-3xl sm:text-4xl font-bold text-white leading-none">{box.val}</div>
+                      <div className="text-[11px] text-white/50 uppercase tracking-wider mt-2 font-medium">{box.unit}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="flex items-center justify-center gap-2 mt-4 pt-4 border-t border-white/[0.08]">
+                <div className="w-2 h-2 bg-product-primary rounded-full" style={{ animation: 'blink-dot 1s ease-in-out infinite' }} />
+                <span className="text-white/70 text-[13px] font-medium">Harga akan kembali normal setelah timer habis</span>
+              </div>
+            </div>
+          </div>
           <Card className="fade-in overflow-hidden border-2 border-product-primary/20 shadow-xl p-0">
             <div className="bg-gradient-to-r from-product-primary to-product-primary-dark p-6 text-center text-white">
               <Badge className="bg-white/20 text-white border-white/20 mb-2">Promo Terbatas !!</Badge>
@@ -211,9 +259,9 @@ export default function KaryaJuaraLanding() {
                   <span className="text-text-muted-warm text-sm">Harga Normal</span>
                   <span className="price-strike ml-2 text-xl text-text-muted-warm">Rp 1.449.000</span>
                 </div>
-                <div className="font-display text-5xl font-bold text-product-primary mb-2">Rp 249.000</div>
+                <div className="font-display text-5xl font-bold text-product-primary mb-2">Rp 149.000</div>
                 <Badge variant="secondary" className="bg-green-100 text-green-700 text-sm font-semibold">
-                  Hemat Rp 1.200.000
+                  Hemat Rp 1.300.000
                 </Badge>
               </div>
               <div className="p-6">
